@@ -19,8 +19,7 @@ const Project = () => (
       />
     </Preview>
     <Logo>
-      {/* <Link href="/projeto?id=1" as="/projeto/projeto-nome"> */}
-      <Link href="/">
+      <Link href="/projeto?id=1" as="/projeto/projeto-nome">
         <a>
           <img
             src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/adnews/alex-madeira-adnews-logo.png"
