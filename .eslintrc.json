@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [],
+  "extends": "airbnb",
   "env": {
     "browser": true,
     "jest": true
@@ -16,6 +16,7 @@
     ],
     "global-require": "off",
     "import/prefer-default-export": "off",
+    "no-unused-expressions": ["error", { "allowTaggedTempletes": true }],
     "no-unused-vars": [
       "error",
       {
