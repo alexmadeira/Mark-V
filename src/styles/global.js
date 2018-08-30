@@ -18,7 +18,7 @@ injectGlobal`
 
 html,body, #__next {
   height:100%;
-  max-width: 100vw;
+  max-width: 100vw;  
 }
 
 html {
@@ -31,5 +31,19 @@ body{
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
 }
+img{
+  max-width:100%;
+}
+.noHidden{
+  overflow:initial!important
+}
+.topMargin{
+  margin-top:30px;
+}
+.noHorizontalMargin{
+  margin-left:0!important;
+  margin-right:0!important;
+}
+
 
 `;
