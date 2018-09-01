@@ -1,0 +1,71 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "slug": "game-7",
+      "name": "Game 7",
+      "description": "Descricao Descricao Descricao ",
+      "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
+
+      "images": {
+        "preview": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-preview.jpg",
+          "name": "game7 Preview",
+          "backgroundColor": "#ffffff"
+        },
+        "background": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-background.jpg",
+          "backgroundColor": "#ffffff"
+        },
+        "logo": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-logo.png",
+          "name": "game7 Logo"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "slug": "nerd-loot",
+      "name": "NerdLoot",
+      "description": "Descricao Descricao Descricao ",
+      "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
+      "images": {
+        "preview": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-preview.jpg",
+          "name": "nerdloot Preview",
+          "backgroundColor": "#133548"
+        },
+        "background": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-background.jpg",
+          "backgroundColor": "#133548"
+        },
+        "logo": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-logo.png",
+          "name": "nerdloot Logo"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "slug": "guia-bolso",
+      "name": "Guia Bolso",
+      "description": "Descricao Descricao Descricao ",
+      "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
+      "images": {
+        "preview": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-preview.jpg",
+          "name": "guiabolso Preview",
+          "backgroundColor": "#ffffff"
+        },
+        "background": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-background.jpg",
+          "backgroundColor": "#ffffff"
+        },
+        "logo": {
+          "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-logo.png",
+          "name": "guiabolso Logo"
+        }
+      }
+    }
+  ]
+}
