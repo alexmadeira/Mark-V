@@ -173,6 +173,16 @@ export const Description = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+export const LogoLink = styled(Link)`
+  &:hover {
+    img {
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
+      width: calc(100% + 8px);
+      margin-left: -2px;
+      margin-top: -2px;
+    }
+  }
+`;
 
 export const Logo = styled.div`
   position: absolute;
@@ -186,10 +196,12 @@ export const Logo = styled.div`
     left: 50%;
   }
   img {
-    filter: drop-shadow(0px 0px 10px #000000);
+    filter: drop-shadow(0px 0px 0px #000000);
+    transition: all 0.5s;
     width: 100%;
     min-height: initial;
     max-height: initial;
+    position: relative;
   }
 `;
 

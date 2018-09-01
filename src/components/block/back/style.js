@@ -15,6 +15,15 @@ export const Container = styled.div`
 `;
 
 export const Arrow = styled(Link)`
+  display: inline-block;
+  color: #fff;
+  font-size: 1.25em;
+  font-style: italic;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+  padding: 5px 0;
+
   .the-arrow {
     width: 64px;
     transition: all 0.2s;
@@ -90,16 +99,6 @@ export const Arrow = styled(Link)`
   .the-arrow > .shaft:after {
     -webkit-transform-origin: bottom left;
     transform-origin: bottom left;
-  }
-
-  & {
-    display: inline-block;
-    color: #fff;
-    font-size: 1.25em;
-    font-style: italic;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.2s;
   }
   &:hover {
     color: #fff;

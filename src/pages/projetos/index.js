@@ -5,7 +5,7 @@ import { Main } from "./style";
 
 const Projetos = () => (
   <Main>
-    <Back to="/" />
+    <Back to="/" text="Home" />
     <Projects simple={false} />
   </Main>
 );

@@ -6,7 +6,7 @@ export function* getProject(action) {
   try {
     const respose = yield call(
       api.get,
-      `/projects/?slug_like=${action.payload.slug}`
+      `/projects/?slug_like=${action.payload.slug}&_expand=agency`
     );
 
     yield put(ProjectActions.getProjectSucess(respose.data));

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Arrow } from "./style";
-const Back = ({ to }) => (
+const Back = ({ to, text }) => (
   <Container>
     <p>
       <Arrow to={to} className="animated-arrow">
@@ -9,7 +9,7 @@ const Back = ({ to }) => (
           <span className="shaft" />
         </span>
         <span className="main">
-          <span className="text">Voltar</span>
+          <span className="text">{text ? text : "Voltar"}</span>
           <span className="the-arrow -right">
             <span className="shaft" />
           </span>

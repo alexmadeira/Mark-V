@@ -11,6 +11,7 @@ import {
   DescriptionBox,
   Description,
   BigDescriptionBox,
+  LogoLink,
   Logo,
   ViewMore,
   Buttom,
@@ -84,12 +85,12 @@ export default class Project extends Component {
           />
         </Preview>
         <Logo className={this.state.isOpen ? "open" : ""}>
-          <a>
+          <LogoLink to={`/projeto/${this.props.project.slug}`}>
             <img
               src={this.props.project.images.logo.url}
               alt={this.props.project.images.logo.name}
             />
-          </a>
+          </LogoLink>
         </Logo>
         <TitleBox className={this.state.isOpen ? "open" : ""}>
           <Title>{this.props.project.name}</Title>
@@ -99,11 +100,7 @@ export default class Project extends Component {
             {!this.state.isOpen ? (
               <ViewMore>
                 <Buttom onClick={this.openProject}>Ver</Buttom>
-                <ButtomLink
-                  to={`/projeto/${this.props.project.id}/${
-                    this.props.project.slug
-                  }`}
-                >
+                <ButtomLink to={`/projeto/${this.props.project.slug}`}>
                   Completo
                 </ButtomLink>
               </ViewMore>

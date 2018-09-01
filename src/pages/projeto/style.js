@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   background: #ffffff;
+  min-height: calc(100vh - 100px);
 `;
 export const Header = styled.header`
   height: 90vh;
@@ -113,7 +114,7 @@ export const AgencyBox = styled.div`
   max-width: 600px;
   position: relative;
   figure {
-    max-width: 90%;
+    max-width: calc(100% - 20px);
   }
 `;
 export const AgencyDescriptionBox = styled.div``;

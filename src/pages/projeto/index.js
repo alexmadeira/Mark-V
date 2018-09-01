@@ -29,23 +29,55 @@ class Projeto extends Component {
       id: PropTypes.number.isRequired,
       slug: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       longDescription: PropTypes.string.isRequired,
       images: PropTypes.shape({
         preview: PropTypes.shape({
           url: PropTypes.string.isRequired,
           name: PropTypes.string.isRequired
-        }),
+        }).isRequired,
         background: PropTypes.shape({
           url: PropTypes.string.isRequired,
           backgroundColor: PropTypes.string.isRequired
-        }),
+        }).isRequired,
         logo: PropTypes.shape({
           url: PropTypes.string.isRequired,
           name: PropTypes.string.isRequired
-        })
+        }).isRequired,
+        destaques: PropTypes.shape({
+          princiapal: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          produto: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          esquerda: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          centro: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          direita: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired
+        }).isRequired
+      }).isRequired,
+
+      agency: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        images: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired
       }).isRequired
-    }).isRequired
+    })
   };
 
   componentDidMount() {
@@ -55,101 +87,89 @@ class Projeto extends Component {
 
   render() {
     return (
-      <Fragment>
-        {this.props.project.data.map(project => (
-          <Main key={project.id}>
-            <Back to="/projetos" />
-            <Header>
-              <ProjetBackground src={project.images.background.url} />
-              <a
-                href="https://www.nerdloot.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Logo
-                  src={project.images.logo.url}
-                  alt={project.images.logo.name}
-                />
-              </a>
-              <ProjetDescriptionBox>
-                <ProjetDescription>
-                  <h2>{project.longDescription}</h2>
-                </ProjetDescription>
-              </ProjetDescriptionBox>
-            </Header>
-            <Container backgroundColor="20,53,72">
-              <Row className="noHorizontalMargin">
-                <AgencyBox>
-                  <AgencyDescriptionBox>
-                    <AgencyDescription>
-                      <TitleBox>
-                        <Title>Agencia</Title>
-                      </TitleBox>
-                      <h2>Corebiz</h2>
-                      <p>
-                        Especializada em oferecer soluções completas em
-                        marketing digital focados em Omnichannel & Omnicontext,
-                        a CoreBiz se destaca como uma das maiores agências de
-                        e-commerce do Brasil e tem a missão de rentabilizar
-                        continuamente os negócios dos seus clientes, por meio de
-                        uma estratégia única, baseada 100% em Marketing
-                        Cognitivo.
-                      </p>
-                    </AgencyDescription>
-                  </AgencyDescriptionBox>
-                  <FigureBox>
-                    <img
-                      src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/Corebiz/alex-madeira-Corebiz-corebiz.jpg"
-                      alt="logo"
-                    />
-                  </FigureBox>
-                </AgencyBox>
-                <FigureBox>
-                  <img
-                    src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque.jpg"
-                    alt="logo"
-                  />
-                </FigureBox>
-              </Row>
-              <Row>
-                <div md={12}>
-                  <FigureBox>
-                    <img
-                      src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-produto-destaque.jpg"
-                      alt="logo"
-                    />
-                  </FigureBox>
-                </div>
-              </Row>
-              <Row className="topMargin noHorizontalMargin">
-                <FigureBox>
-                  <img
-                    src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque-esquerda.jpg"
-                    alt="logo"
-                  />
-                </FigureBox>
-                <FigureBox>
-                  <img
-                    src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque-cento.jpg"
-                    alt="logo"
-                  />
-                </FigureBox>
-                <FigureBox>
-                  <img
-                    src="https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque-direita.jpg"
-                    alt="logo"
-                  />
-                </FigureBox>
-              </Row>
-            </Container>
-          </Main>
-        ))}
-      </Fragment>
+      <Main>
+        <Back to={"/projetos"} text="Projetos" />
+        {this.props.project && <MainContent project={this.props.project} />}
+      </Main>
     );
   }
 }
+
+const MainContent = ({ project }) => {
+  return (
+    <Fragment>
+      <Header>
+        <ProjetBackground src={project.images.background.url} />
+        <a href={project.url} target="_blank" rel="noopener noreferrer">
+          <Logo src={project.images.logo.url} alt={project.images.logo.name} />
+        </a>
+        <ProjetDescriptionBox>
+          <ProjetDescription>
+            <h2>{project.longDescription}</h2>
+          </ProjetDescription>
+        </ProjetDescriptionBox>
+      </Header>
+      <Container backgroundColor="20,53,72">
+        <Row className="noHorizontalMargin">
+          <AgencyBox>
+            <AgencyDescriptionBox>
+              <AgencyDescription>
+                <TitleBox>
+                  <Title>Agencia</Title>
+                </TitleBox>
+                <h2>{project.agency.name}</h2>
+                <p>{project.agency.description}</p>
+              </AgencyDescription>
+            </AgencyDescriptionBox>
+            <FigureBox>
+              <img
+                src={project.agency.images.url}
+                alt={project.agency.images.name}
+              />
+            </FigureBox>
+          </AgencyBox>
+          <FigureBox>
+            <img
+              src={project.images.destaques.princiapal.url}
+              alt={project.images.destaques.princiapal.name}
+            />
+          </FigureBox>
+        </Row>
+        <Row>
+          <FigureBox>
+            <img
+              src={project.images.destaques.produto.url}
+              alt={project.images.destaques.produto.name}
+            />
+          </FigureBox>
+        </Row>
+        <Row className="topMargin noHorizontalMargin">
+          <FigureBox>
+            <img
+              src={project.images.destaques.esquerda.url}
+              alt={project.images.destaques.esquerda.name}
+            />
+          </FigureBox>
+          <FigureBox>
+            <img
+              src={project.images.destaques.centro.url}
+              alt={project.images.destaques.centro.name}
+            />
+          </FigureBox>
+          <FigureBox>
+            <img
+              src={project.images.destaques.direita.url}
+              alt={project.images.destaques.direita.name}
+            />
+          </FigureBox>
+        </Row>
+      </Container>
+    </Fragment>
+  );
+};
 const mapStateToProps = state => ({
-  project: state.project
+  project: state.project.data[0],
+  loading: state.project.loading
 });
 
 const mapDispatchToProps = dispatch =>

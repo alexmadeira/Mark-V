@@ -2,11 +2,12 @@
   "projects": [
     {
       "id": 1,
+      "agencyId": 1,
       "slug": "game-7",
       "name": "Game 7",
       "description": "Descricao Descricao Descricao ",
       "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
-
+      "url": "http://www.game7.com.br",
       "images": {
         "preview": {
           "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-preview.jpg",
@@ -20,13 +21,37 @@
         "logo": {
           "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-logo.png",
           "name": "game7 Logo"
+        },
+        "destaques": {
+          "princiapal": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-destaque.jpg",
+            "name": "game7 Destaque"
+          },
+          "produto": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/game7/alex-madeira-game7-produto-destaque.jpg",
+            "name": "game7 Logo"
+          },
+          "esquerda": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/game7/alex-madeira-game7-destaque-esquerda.jpg",
+            "name": "game7 Logo"
+          },
+          "centro": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/game7/alex-madeira-game7-destaque-centro.jpg",
+            "name": "game7 Logo"
+          },
+          "direita": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/game7/alex-madeira-game7-destaque-direita.jpg",
+            "name": "game7 Logo"
+          }
         }
       }
     },
     {
       "id": 2,
+      "agencyId": 1,
       "slug": "nerd-loot",
       "name": "NerdLoot",
+      "url": "http://www.nerdloot.com.br",
       "description": "Descricao Descricao Descricao ",
       "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
       "images": {
@@ -42,13 +67,37 @@
         "logo": {
           "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-logo.png",
           "name": "nerdloot Logo"
+        },
+        "destaques": {
+          "princiapal": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-destaque.jpg",
+            "name": "nerdloot Destaque"
+          },
+          "produto": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-produto-destaque.jpg",
+            "name": "nerdloot Logo"
+          },
+          "esquerda": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque-esquerda.jpg",
+            "name": "nerdloot Logo"
+          },
+          "centro": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/nerdloot/alex-madeira-nerdloot-destaque-centro.jpg",
+            "name": "nerdloot Logo"
+          },
+          "direita": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/nerdloot/alex-madeira-nerdloot-destaque-direita.jpg",
+            "name": "nerdloot Logo"
+          }
         }
       }
     },
     {
       "id": 3,
+      "agencyId": 1,
       "slug": "guia-bolso",
       "name": "Guia Bolso",
+      "url": "http://www.guiabolso.com.br",
       "description": "Descricao Descricao Descricao ",
       "longDescription": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao ",
       "images": {
@@ -64,7 +113,40 @@
         "logo": {
           "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-logo.png",
           "name": "guiabolso Logo"
+        },
+        "destaques": {
+          "princiapal": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-destaque.jpg",
+            "name": "guiabolso Destaque"
+          },
+          "produto": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/guiabolso/alex-madeira-guiabolso-produto-destaque.jpg",
+            "name": "guiabolso Logo"
+          },
+          "esquerda": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/guiabolso/alex-madeira-guiabolso-destaque-esquerda.jpg",
+            "name": "guiabolso Logo"
+          },
+          "centro": {
+            "url": "https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/guiabolso/alex-madeira-guiabolso-destaque-centro.jpg",
+            "name": "guiabolso Logo"
+          },
+          "direita": {
+            "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/guiabolso/alex-madeira-guiabolso-destaque-direita.jpg",
+            "name": "guiabolso Logo"
+          }
         }
+      }
+    }
+  ],
+  "agencies": [
+    {
+      "id": 1,
+      "name": "Guia Bolso",
+      "description": "Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao",
+      "images": {
+        "url": "https://alex-madeira.s3.sa-east-1.amazonaws.com/imagens/Corebiz/alex-madeira-Corebiz-corebiz.jpg",
+        "name": "Guia Bolso Equipe"
       }
     }
   ]

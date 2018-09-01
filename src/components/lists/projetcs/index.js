@@ -23,7 +23,6 @@ class Projects extends Component {
   }
 
   render() {
-    console.log(this.props.projects);
     return (
       <Container>
         <Row>
