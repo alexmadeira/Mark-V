@@ -31,20 +31,18 @@ export default class Project extends Component {
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       longDescription: PropTypes.string.isRequired,
-      images: PropTypes.shape({
-        preview: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired,
-          backgroundColor: PropTypes.string.isRequired
-        }),
-        background: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          backgroundColor: PropTypes.string.isRequired
-        }),
-        logo: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired
-        })
+      backgroundColor: PropTypes.string.isRequired,
+      previewColor: PropTypes.string.isRequired,
+      logo: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+      }).isRequired,
+      background: PropTypes.shape({
+        url: PropTypes.string.isRequired
+      }).isRequired,
+      preview: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
       }).isRequired
     }).isRequired
   };
@@ -69,26 +67,26 @@ export default class Project extends Component {
     return (
       <Container
         className={this.state.isOpen ? "open" : ""}
-        backgroundImage={this.props.project.images.background.url}
-        backgroundColor={this.props.project.images.background.backgroundColor}
+        backgroundImage={this.props.project.background.url}
+        backgroundColor={this.props.project.backgroundColor}
         ref={Container => {
           this.projectItem = Container;
         }}
       >
         <Preview
           className={this.state.isOpen ? "open" : ""}
-          backgroundColor={this.props.project.images.preview.backgroundColor}
+          backgroundColor={this.props.project.previewColor}
         >
           <img
-            src={this.props.project.images.preview.url}
-            alt={this.props.project.images.preview.name}
+            src={this.props.project.preview.url}
+            alt={this.props.project.preview.name}
           />
         </Preview>
         <Logo className={this.state.isOpen ? "open" : ""}>
           <LogoLink to={`/projeto/${this.props.project.slug}`}>
             <img
-              src={this.props.project.images.logo.url}
-              alt={this.props.project.images.logo.name}
+              src={this.props.project.logo.url}
+              alt={this.props.project.logo.name}
             />
           </LogoLink>
         </Logo>
