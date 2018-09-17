@@ -44,7 +44,7 @@ export default class Project extends Component {
         url: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired
       }).isRequired
-    }).isRequired
+    })
   };
 
   openProject = e => {

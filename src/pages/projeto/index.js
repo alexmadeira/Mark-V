@@ -26,57 +26,54 @@ import {
 class Projeto extends Component {
   static propTypes = {
     project: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      slug: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      images: PropTypes.shape({
-        preview: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired
-        }).isRequired,
-        background: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          backgroundColor: PropTypes.string.isRequired
-        }).isRequired,
-        logo: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired
-        }).isRequired,
-        destaques: PropTypes.shape({
-          princiapal: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired,
-          produto: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired,
-          esquerda: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired,
-          centro: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired,
-          direita: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired
-        }).isRequired
-      }).isRequired,
-
+      id: PropTypes.number,
+      slug: PropTypes.string,
+      name: PropTypes.string,
+      url: PropTypes.string,
+      description: PropTypes.string,
+      longDescription: PropTypes.string,
+      backgroundColor: PropTypes.string,
+      preview: PropTypes.shape({
+        url: PropTypes.string,
+        name: PropTypes.string
+      }),
+      background: PropTypes.shape({
+        url: PropTypes.string
+      }),
+      logo: PropTypes.shape({
+        url: PropTypes.string,
+        name: PropTypes.string
+      }),
+      destaques: PropTypes.shape({
+        princiapal: PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string
+        }),
+        produto: PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string
+        }),
+        esquerda: PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string
+        }),
+        centro: PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string
+        }),
+        direita: PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string
+        })
+      }),
       agency: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
+        name: PropTypes.string,
+        description: PropTypes.string,
         images: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired
-        }).isRequired
-      }).isRequired
+          url: PropTypes.string,
+          name: PropTypes.string
+        })
+      })
     })
   };
 
@@ -86,10 +83,11 @@ class Projeto extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Main>
         <Back to={"/projetos"} text="Projetos" />
-        {this.props.project && <MainContent project={this.props.project} />}
+        {this.props.project.id && <MainContent project={this.props.project} />}
       </Main>
     );
   }
@@ -99,9 +97,9 @@ const MainContent = ({ project }) => {
   return (
     <Fragment>
       <Header>
-        <ProjetBackground src={project.images.background.url} />
+        <ProjetBackground src={project.background.url} />
         <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <Logo src={project.images.logo.url} alt={project.images.logo.name} />
+          <Logo src={project.logo.url} alt={project.logo.name} />
         </a>
         <ProjetDescriptionBox>
           <ProjetDescription>
@@ -109,7 +107,7 @@ const MainContent = ({ project }) => {
           </ProjetDescription>
         </ProjetDescriptionBox>
       </Header>
-      <Container backgroundColor="20,53,72">
+      <Container backgroundColor={project.backgroundColor}>
         <Row className="noHorizontalMargin">
           <AgencyBox>
             <AgencyDescriptionBox>
@@ -123,43 +121,40 @@ const MainContent = ({ project }) => {
             </AgencyDescriptionBox>
             <FigureBox>
               <img
-                src={project.agency.images.url}
-                alt={project.agency.images.name}
+                src={project.agency.image.url}
+                alt={project.agency.image.name}
               />
             </FigureBox>
           </AgencyBox>
           <FigureBox>
-            <img
-              src={project.images.destaques.princiapal.url}
-              alt={project.images.destaques.princiapal.name}
-            />
+            <img src={project.destaque.url} alt={project.destaque.name} />
           </FigureBox>
         </Row>
         <Row>
           <FigureBox>
             <img
-              src={project.images.destaques.produto.url}
-              alt={project.images.destaques.produto.name}
+              src={project.produtoDestaque.url}
+              alt={project.produtoDestaque.name}
             />
           </FigureBox>
         </Row>
         <Row className="topMargin noHorizontalMargin">
           <FigureBox>
             <img
-              src={project.images.destaques.esquerda.url}
-              alt={project.images.destaques.esquerda.name}
+              src={project.destaqueEsquerda.url}
+              alt={project.destaqueEsquerda.name}
             />
           </FigureBox>
           <FigureBox>
             <img
-              src={project.images.destaques.centro.url}
-              alt={project.images.destaques.centro.name}
+              src={project.destaqueCentro.url}
+              alt={project.destaqueCentro.name}
             />
           </FigureBox>
           <FigureBox>
             <img
-              src={project.images.destaques.direita.url}
-              alt={project.images.destaques.direita.name}
+              src={project.destaqueDireita.url}
+              alt={project.destaqueDireita.name}
             />
           </FigureBox>
         </Row>
@@ -168,7 +163,7 @@ const MainContent = ({ project }) => {
   );
 };
 const mapStateToProps = state => ({
-  project: state.project.data[0],
+  project: state.project.data,
   loading: state.project.loading
 });
 

@@ -4,10 +4,7 @@ import { Creators as ProjectActions } from "../ducks/project";
 
 export function* getProject(action) {
   try {
-    const respose = yield call(
-      api.get,
-      `/projects/?slug_like=${action.payload.slug}&_expand=agency`
-    );
+    const respose = yield call(api.get, `/projects/${action.payload.slug}`);
 
     yield put(ProjectActions.getProjectSucess(respose.data));
   } catch (err) {

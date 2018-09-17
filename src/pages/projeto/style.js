@@ -171,6 +171,7 @@ export const AgencyDescription = styled.div`
     border-bottom: 1px solid #000;
   }
 `;
+
 export const FigureBox = styled.figure`
   border: 1px solid #ffffff;
   height: ${props => (props.height ? `${props.height}px` : "auto")};
