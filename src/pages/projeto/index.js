@@ -83,7 +83,6 @@ class Projeto extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Main>
         <Back to={"/projetos"} text="Projetos" />
