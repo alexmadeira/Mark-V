@@ -25,6 +25,7 @@ export const Center = styled.div`
   justify-content: center;
   align-items: center;
   background: transparent;
+  flex-wrap: wrap;
 `;
 
 export const Container = styled.div`

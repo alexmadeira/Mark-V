@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Container, Social } from "./style";
+import { Container, Social, Paragrafo } from "./style";
 const Footer = () => (
   <Container>
-    <p>
+    <Paragrafo>
       © 2016 - 2018 Portfólio Alex Madeira. Feito pela mão direita de um canhoto
       :)
-    </p>
+    </Paragrafo>
     <Social>
       <li>
         <a
@@ -27,6 +27,8 @@ const Footer = () => (
         >
           <i className="fab fa-instagram" />
         </a>
+      </li>
+      <li>
         <a
           href="https://www.instagram.com/alexcmadeira/"
           target="_blank"

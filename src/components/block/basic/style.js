@@ -6,21 +6,22 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 250px;
-  margin-top: ${props => (props.regular ? "100px" : "0px")};
+  padding: 30px;
+  margin-top: ${props => (props.regular ? "70px" : "0px")};
   ${props => (props.reverse ? "transform: rotate(5deg)" : "")};
   @media (max-width: 992px) {
     transform: rotate(0deg) !important;
   }
   ${props =>
     props.shadow
-      ? "-webkit-box-shadow: 0 10px 20px -4px rgba(90, 90, 90, 0.7)"
+      ? "-webkit-box-shadow: 0 25px 19px 4px rgba(90, 90, 90, 0.7)"
       : ""};
   ${props =>
     props.shadow
-      ? "-moz-box-shadow: 0 10px 20px -4px rgba(90, 90, 90, 0.7)"
+      ? "-moz-box-shadow: 0 25px 19px 4px rgba(90, 90, 90, 0.7)"
       : ""};
   ${props =>
-    props.shadow ? "box-shadow: 0 10px 20px -4px rgba(90, 90, 90, 0.7)" : ""};
+    props.shadow ? "box-shadow: 0 25px 19px 4px rgba(90, 90, 90, 0.7)" : ""};
   h1,
   h2,
   h3,
@@ -38,7 +39,10 @@ export const Container = styled.div`
       font-size: 30px;
       display: inline-block;
       color: #000;
-      line-height: 80%;
+      line-height: 32px;
+      @media (max-width: 720px) {
+        text-align: center;
+      }
       &:first-letter {
         color: #f00;
         text-shadow: 3px 4px 2px #000000;

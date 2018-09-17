@@ -24,7 +24,7 @@ export const OutlineButtom = styled(Link)`
   user-select: none;
   font-size: 20px;
   padding: 10px 47px;
-  margin: 0 10px;
+  margin: 10px;
   &.btn-default {
     border-radius: 5px;
     color: #333;
