@@ -15,6 +15,12 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  @media (max-width: 914px) {
+    flex-direction: column;
+  }
+  @media (max-width: 480px) {
+    height: 80vh;
+  }
   & > * {
     position: relative;
     z-index: 1;
@@ -51,7 +57,6 @@ export const ProjetDescriptionBox = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   flex: 1;
-
   position: relative;
   height: 100%;
 `;
@@ -65,6 +70,12 @@ export const ProjetDescription = styled.div`
   max-width: 500px;
   flex: 1;
   width: 100%;
+  @media (max-width: 914px) {
+    max-width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
   h2 {
     font-size: 25px;
     font-weight: normal;
@@ -90,24 +101,27 @@ export const Row = styled.div`
   left: -15px;
   & > * {
     margin: 0 15px;
-    max-height: 400px;
   }
 `;
 export const AgencyBox = styled.div`
   display: flex;
   width: 100%;
-  min-width: 400px;
-  flex: 1;
+  max-width: 33.333%;
+  @media (max-width: 914px) {
+    max-width: 100%;
+  }
   position: relative;
-  margin-bottom: 30px;
-  height: 400px;
+  margin: 15px;
+  height: 450px;
   figure {
     max-width: calc(100% - 20px);
+    width: 100%;
     display: flex;
     position: absolute;
     height: 100%;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.6);
     img {
       max-width: initial;
       max-height: 100%;
@@ -170,30 +184,6 @@ export const AgencyDescription = styled.div`
     border-bottom: 1px solid #000;
   }
 `;
-export const DestaqueBox = styled.div`
-  display: flex;
-  margin-bottom: 30px;
-  width: 100%;
-  min-width: 1000px;
-  flex: 1;
-  position: relative;
-  figure {
-    max-width: 100%;
-  }
-`;
-export const FigureBox = styled.figure`
-  border: 1px solid #ffffff;
-  height: ${props => (props.height ? `${props.height}px` : "auto")};
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 100%;
-  flex: 1;
-  img {
-    max-width: 100%;
-  }
-`;
 
 export const TitleBox = styled.div`
   background: #ed942f;
@@ -237,5 +227,53 @@ export const Title = styled.h2`
     padding-bottom: 20px;
     float: left;
     text-transform: uppercase;
+  }
+`;
+
+export const DestaqueBox = styled.div`
+  display: flex;
+  margin: 15px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 60%;
+  flex: 1;
+  position: relative;
+  height: 450px;
+  figure {
+    max-width: 100%;
+  }
+`;
+export const ProdutoDestaqueBox = styled.div`
+  position: relative;
+  margin: 15px;
+  max-width: 100%;
+`;
+
+export const DestaquesBox = styled.div`
+  flex: 1;
+  margin: 15px;
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+export const FigureBox = styled.figure`
+  border: 1px solid #ffffff;
+  height: ${props => (props.height ? `${props.height}px` : "auto")};
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 100%;
+  flex: 1;
+  img {
+    min-height: 100%;
+    max-width: 100%;
   }
 `;

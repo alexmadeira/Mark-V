@@ -19,6 +19,8 @@ import {
   TitleBox,
   Title,
   DestaqueBox,
+  ProdutoDestaqueBox,
+  DestaquesBox,
   FigureBox,
   Header,
   Row
@@ -133,34 +135,40 @@ const MainContent = ({ project }) => {
           </DestaqueBox>
         </Row>
         <Row>
-          <DestaqueBox>
+          <ProdutoDestaqueBox>
             <FigureBox>
               <img
                 src={project.produtoDestaque.url}
                 alt={project.produtoDestaque.name}
               />
             </FigureBox>
-          </DestaqueBox>
+          </ProdutoDestaqueBox>
         </Row>
         <Row className="topMargin noHorizontalMargin">
-          <FigureBox>
-            <img
-              src={project.destaqueEsquerda.url}
-              alt={project.destaqueEsquerda.name}
-            />
-          </FigureBox>
-          <FigureBox>
-            <img
-              src={project.destaqueCentro.url}
-              alt={project.destaqueCentro.name}
-            />
-          </FigureBox>
-          <FigureBox>
-            <img
-              src={project.destaqueDireita.url}
-              alt={project.destaqueDireita.name}
-            />
-          </FigureBox>
+          <DestaquesBox>
+            <FigureBox>
+              <img
+                src={project.destaqueEsquerda.url}
+                alt={project.destaqueEsquerda.name}
+              />
+            </FigureBox>
+          </DestaquesBox>
+          <DestaquesBox>
+            <FigureBox>
+              <img
+                src={project.destaqueCentro.url}
+                alt={project.destaqueCentro.name}
+              />
+            </FigureBox>
+          </DestaquesBox>
+          <DestaquesBox>
+            <FigureBox>
+              <img
+                src={project.destaqueDireita.url}
+                alt={project.destaqueDireita.name}
+              />
+            </FigureBox>
+          </DestaquesBox>
         </Row>
       </Container>
     </Fragment>
