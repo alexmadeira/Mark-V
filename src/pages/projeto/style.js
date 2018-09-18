@@ -114,9 +114,9 @@ export const AgencyBox = styled.div`
   margin: 15px;
   height: 450px;
   figure {
-    max-width: calc(100% - 20px);
+    width: calc(100% - 20px);
     @media (max-width: 1200px) {
-      max-width: 100%;
+      width: 100%;
     }
     width: 100%;
     display: flex;
@@ -127,7 +127,8 @@ export const AgencyBox = styled.div`
     background: rgba(0, 0, 0, 0.6);
     img {
       max-width: initial;
-      max-height: 100%;
+      width: 100%;
+      min-height: 100%;
     }
   }
 `;
@@ -243,13 +244,24 @@ export const DestaqueBox = styled.div`
   position: relative;
   height: 450px;
   figure {
-    max-width: 100%;
+    width: 100%;
+    img {
+      max-width: initial;
+      width: 100%;
+    }
   }
 `;
 export const ProdutoDestaqueBox = styled.div`
   position: relative;
   margin: 15px;
-  max-width: 100%;
+  width: 100%;
+  figure {
+    width: 100%;
+    img {
+      max-width: initial;
+      width: 100%;
+    }
+  }
 `;
 
 export const DestaquesBox = styled.div`
@@ -273,12 +285,11 @@ export const DestaquesBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     img {
-      @media (max-width: 714px) {
-        min-height: initial;
-        max-width: initial;
-        min-width: 100%;
-      }
+      min-height: 100%;
+      max-width: initial;
+      width: 100%;
     }
   }
 `;
