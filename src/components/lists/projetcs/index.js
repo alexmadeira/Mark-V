@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import queryString from "query-string";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import { Creators as ProjectsAtions } from "../../../store/ducks/projects";
 
 import PropTypes from "prop-types";
@@ -19,9 +21,12 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    this.props.getProjectsRequest(
-      `limit=${this.props.limit}&order=${this.props.order}`
-    );
+    const filter = queryString.stringify({
+      limit: this.props.limit,
+      order: this.props.order
+    });
+
+    this.props.getProjectsRequest(filter);
   }
 
   render() {
