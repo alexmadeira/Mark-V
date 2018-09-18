@@ -20,7 +20,10 @@ export default function projects(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-  getProjectsRequest: () => ({ type: Types.GET_REQUEST }),
+  getProjectsRequest: filter => ({
+    type: Types.GET_REQUEST,
+    payload: { filter }
+  }),
   getProjectsSucess: data => ({
     type: Types.GET_SUCCESS,
     payload: { data }

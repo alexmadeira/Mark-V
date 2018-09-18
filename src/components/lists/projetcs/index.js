@@ -19,7 +19,9 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    this.props.getProjectsRequest();
+    this.props.getProjectsRequest(
+      `limit=${this.props.limit}&order=${this.props.order}`
+    );
   }
 
   render() {
