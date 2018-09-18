@@ -115,6 +115,9 @@ export const AgencyBox = styled.div`
   height: 450px;
   figure {
     max-width: calc(100% - 20px);
+    @media (max-width: 1200px) {
+      max-width: 100%;
+    }
     width: 100%;
     display: flex;
     position: absolute;
@@ -257,10 +260,26 @@ export const DestaquesBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &:last-child {
+    img {
+      @media (max-width: 1064px) {
+        min-height: initial;
+        max-width: initial;
+        min-width: 100%;
+      }
+    }
+  }
   figure {
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+      @media (max-width: 714px) {
+        min-height: initial;
+        max-width: initial;
+        min-width: 100%;
+      }
+    }
   }
 `;
 export const FigureBox = styled.figure`
