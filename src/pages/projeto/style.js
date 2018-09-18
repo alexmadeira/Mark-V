@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  background: #ffffff;
+  background: ${props =>
+    props.backgroundColor ? props.backgroundColor : "#ffffff"};
   min-height: calc(100vh - 100px);
 `;
 export const Header = styled.header`
@@ -77,44 +78,40 @@ export const Container = styled.div`
   flex-wrap: wrap;
   position: relative;
   padding: 15px;
-
-  background: linear-gradient(
-    rgba(
-        ${props => (props.backgroundColor ? props.backgroundColor : "#ffffff")},
-        0
-      )
-      0%,
-    rgba(
-        ${props => (props.backgroundColor ? props.backgroundColor : "#ffffff")},
-        1
-      )
-      50%
-  );
-
-  background-color: ${props =>
-    props.backgroundColor ? props.backgroundColor : "#ffffff"};
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%);
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  width: calc(100vw -15px);
+  width: calc(100vw - 15px);
   position: relative;
   left: -15px;
-  margin-bottom: 30px;
   & > * {
     margin: 0 15px;
-    max-height: 500px;
+    max-height: 400px;
   }
 `;
 export const AgencyBox = styled.div`
   display: flex;
   width: 100%;
-  max-width: 600px;
+  min-width: 400px;
+  flex: 1;
   position: relative;
+  margin-bottom: 30px;
+  height: 400px;
   figure {
     max-width: calc(100% - 20px);
+    display: flex;
+    position: absolute;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: initial;
+      max-height: 100%;
+    }
   }
 `;
 export const AgencyDescriptionBox = styled.div``;
@@ -122,6 +119,11 @@ export const AgencyDescription = styled.div`
   background: #fff;
   border: 3px solid #000;
   padding: 10px;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 70%;
+  z-index: 2;
   background: #ffffff;
   background: -moz-linear-gradient(
     top,
@@ -161,17 +163,24 @@ export const AgencyDescription = styled.div`
     rgba(255, 255, 255, 0.65) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
-  position: absolute;
-  right: 0;
-  top: -50px;
-  width: 70%;
+
   h2 {
     margin-top: 10px;
     text-align: left;
     border-bottom: 1px solid #000;
   }
 `;
-
+export const DestaqueBox = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  min-width: 1000px;
+  flex: 1;
+  position: relative;
+  figure {
+    max-width: 100%;
+  }
+`;
 export const FigureBox = styled.figure`
   border: 1px solid #ffffff;
   height: ${props => (props.height ? `${props.height}px` : "auto")};

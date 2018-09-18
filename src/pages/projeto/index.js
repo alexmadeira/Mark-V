@@ -18,6 +18,7 @@ import {
   ProjetBackground,
   TitleBox,
   Title,
+  DestaqueBox,
   FigureBox,
   Header,
   Row
@@ -84,7 +85,7 @@ class Projeto extends Component {
 
   render() {
     return (
-      <Main>
+      <Main backgroundColor={this.props.project.backgroundColor}>
         <Back to={"/projetos"} text="Projetos" />
         {this.props.project.id && <MainContent project={this.props.project} />}
       </Main>
@@ -106,7 +107,7 @@ const MainContent = ({ project }) => {
           </ProjetDescription>
         </ProjetDescriptionBox>
       </Header>
-      <Container backgroundColor={project.backgroundColor}>
+      <Container>
         <Row className="noHorizontalMargin">
           <AgencyBox>
             <AgencyDescriptionBox>
@@ -125,17 +126,21 @@ const MainContent = ({ project }) => {
               />
             </FigureBox>
           </AgencyBox>
-          <FigureBox>
-            <img src={project.destaque.url} alt={project.destaque.name} />
-          </FigureBox>
+          <DestaqueBox>
+            <FigureBox>
+              <img src={project.destaque.url} alt={project.destaque.name} />
+            </FigureBox>
+          </DestaqueBox>
         </Row>
         <Row>
-          <FigureBox>
-            <img
-              src={project.produtoDestaque.url}
-              alt={project.produtoDestaque.name}
-            />
-          </FigureBox>
+          <DestaqueBox>
+            <FigureBox>
+              <img
+                src={project.produtoDestaque.url}
+                alt={project.produtoDestaque.name}
+              />
+            </FigureBox>
+          </DestaqueBox>
         </Row>
         <Row className="topMargin noHorizontalMargin">
           <FigureBox>
