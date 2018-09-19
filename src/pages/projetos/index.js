@@ -6,7 +6,7 @@ import { Main } from "./style";
 const Projetos = () => (
   <Main>
     <Back to="/" text="Home" />
-    <Projects simple={false} />
+    <Projects simple={false} order="desc" />
   </Main>
 );
 
