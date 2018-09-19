@@ -11,7 +11,7 @@ const Home = () => (
   <Main>
     <Banner />
     <Inclina>
-      <Projects limit={6} order="desc" simple={true} />
+      <Projects limit={6} order="asc" simple={true} />
       <Basic reverse={true} shadow={false}>
         <h3>Quer saber mais? </h3>
         <p>Dê uma olhadinha nos projetos que participei</p>
