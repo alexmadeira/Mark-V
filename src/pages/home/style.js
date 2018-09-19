@@ -19,6 +19,35 @@ export const Inclina = styled.div`
   }
 `;
 
+export const A = styled.a`
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 20px;
+  padding: 10px 47px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+`;
 export const Center = styled.div`
   display: flex;
   flex-direction: row;

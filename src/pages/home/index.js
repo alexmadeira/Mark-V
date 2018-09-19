@@ -5,7 +5,7 @@ import Basic from "../../components/block/basic";
 import Buttom from "../../components/buttons/outline";
 
 import "../../styles/global";
-import { Main, Inclina, Center } from "./style";
+import { Main, Inclina, Center, A } from "./style";
 
 const Home = () => (
   <Main>
@@ -17,7 +17,13 @@ const Home = () => (
         <p>Dê uma olhadinha nos projetos que participei</p>
         <Center>
           <Buttom to="/projetos">Projetos</Buttom>
-          <Buttom to="/curriculo">Curriculo</Buttom>
+          <A
+            href="https://trampos.co/alexmadeira"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Curriculo
+          </A>
         </Center>
       </Basic>
     </Inclina>
