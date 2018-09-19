@@ -32,10 +32,10 @@ class Projeto extends Component {
       id: PropTypes.number,
       slug: PropTypes.string,
       name: PropTypes.string,
-      url: PropTypes.string,
       description: PropTypes.string,
       longDescription: PropTypes.string,
       backgroundColor: PropTypes.string,
+      url: PropTypes.string.isRequired,
       preview: PropTypes.shape({
         url: PropTypes.string,
         name: PropTypes.string
@@ -86,6 +86,7 @@ class Projeto extends Component {
   }
 
   render() {
+    console.tron.log(this.props.project);
     return (
       <Main backgroundColor={this.props.project.backgroundColor}>
         <Back to={"/projetos"} text="Projetos" />
