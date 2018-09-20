@@ -103,16 +103,14 @@ export const Row = styled.div`
     margin: 0 15px;
   }
 `;
+
 export const AgencyBox = styled.div`
   display: flex;
   width: 100%;
   max-width: 33.333%;
-  @media (max-width: 914px) {
-    max-width: 100%;
-  }
   position: relative;
   margin: 15px;
-  height: 450px;
+  max-height: 450px;
   figure {
     width: calc(100% - 20px);
     @media (max-width: 1200px) {
@@ -120,16 +118,20 @@ export const AgencyBox = styled.div`
     }
     width: 100%;
     display: flex;
-    position: absolute;
     height: 100%;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
     img {
       max-width: initial;
-      width: 100%;
+      height: 100%;
       min-height: 100%;
     }
+  }
+
+  @media (max-width: 914px) {
+    max-width: 100%;
+    widowsheight: auto;
   }
 `;
 export const AgencyDescriptionBox = styled.div``;
@@ -142,6 +144,25 @@ export const AgencyDescription = styled.div`
   top: -50px;
   width: 70%;
   z-index: 2;
+
+  h2 {
+    margin-top: 10px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+  }
+
+  @media (max-width: 914px) {
+    top: initial;
+    bottom: 100%;
+    width: 100%;
+    padding: 0;
+    border: none;
+    p,
+    & > h2 {
+      display: none;
+    }
+  }
+
   background: #ffffff;
   background: -moz-linear-gradient(
     top,
@@ -181,12 +202,6 @@ export const AgencyDescription = styled.div`
     rgba(255, 255, 255, 0.65) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
-
-  h2 {
-    margin-top: 10px;
-    text-align: left;
-    border-bottom: 1px solid #000;
-  }
 `;
 
 export const TitleBox = styled.div`
@@ -255,6 +270,8 @@ export const ProdutoDestaqueBox = styled.div`
   position: relative;
   margin: 15px;
   width: 100%;
+  min-width: 320px;
+  flex: 1;
   figure {
     width: 100%;
     img {

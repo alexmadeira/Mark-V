@@ -108,6 +108,9 @@ export const TitleBox = styled.div`
   &.open {
     opacity: 0;
   }
+  @media (max-width: 460px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h2`
@@ -142,9 +145,14 @@ export const DescriptionBox = styled.div`
   left: -10px;
   bottom: -10px;
   max-width: 80%;
+  
   &.open {
     opacity: 0;
   }
+
+  @media (max-width: 460px) {
+    display: none;
+  }s
 `;
 
 export const BigDescriptionBox = styled.div`
@@ -208,6 +216,16 @@ export const Logo = styled.div`
     max-height: initial;
     position: relative;
   }
+
+  @media (max-width: 960px) {
+    transform: translate(-50%, -50%) rotate(0deg);
+    left: 50%;
+    top: 50%;
+    width: 40%;
+  }
+  @media (max-width: 460px) {
+    width: 85%;
+  }
 `;
 
 export const ViewMore = styled.div`
@@ -219,6 +237,14 @@ export const ViewMore = styled.div`
   flex-direction: column;
   a {
     margin: 5px 0;
+  }
+  @media (max-width: 720px) {
+    transform: translate(0, -10%) rotate(0deg);
+    top: 55%;
+    bottom: initial;
+  }
+  @media (max-width: 460px) {
+    display: none;
   }
 `;
 
@@ -264,6 +290,10 @@ export const Buttom = styled.button`
     -moz-box-shadow: none;
     box-shadow: none;
     font-size: 14px;
+  }
+
+  @media (max-width: 720px) {
+    display: none;
   }
 `;
 
