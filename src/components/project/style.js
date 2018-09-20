@@ -59,6 +59,7 @@ export const Container = styled.div`
   &.open {
     width: 100% !important;
     height: 95vh;
+    flex: initial;
   }
   img {
     max-width: initial !important;
