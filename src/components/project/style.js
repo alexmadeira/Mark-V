@@ -12,7 +12,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 430px;
   position: relative;
   max-width: 100%;
   transition: all 0.2s;
@@ -75,6 +74,11 @@ export const Preview = styled.div`
   position: relative;
   z-index: 2;
   overflow: hidden;
+  img {
+    max-width: 100%;
+    width: 105vw;
+  }
+
   ${props =>
     props.backgroundColor ? `background-color:${props.backgroundColor};` : ""};
   &.open {
