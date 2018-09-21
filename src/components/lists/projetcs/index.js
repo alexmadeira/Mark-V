@@ -33,9 +33,10 @@ class Projects extends Component {
     return (
       <Container>
         <Row>
-          {this.props.projects.data.map(project => (
+          {this.props.projects.data.map((project, i) => (
             <Project
               key={project.id}
+              item={i}
               project={project}
               simple={this.props.simple}
             />

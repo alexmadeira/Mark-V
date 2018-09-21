@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+
+const entrada = keyframes`
+  0% { top: 200px; opacity: 0; }
+  40% { top: 200px; }  
+  50% { opacity: 0; }  
+  100% { top: 0px; opacity: 1; }
+`;
 
 export const Container = styled.div`
   background: ${props => (props.bgcolor ? props.bgcolor : "#FFFFFF")};
@@ -16,6 +23,8 @@ export const Container = styled.div`
   max-width: 100%;
   transition: all 0.2s;
   background-size: cover;
+  opacity: 1;
+  animation: ${entrada} ${props => (props.item ? 1 + props.item / 5 : 1)}s;
 
   ${props =>
     props.backgroundImage

@@ -20,7 +20,8 @@ import {
 
 export default class Project extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    loading: true
   };
 
   static propTypes = {
@@ -69,6 +70,7 @@ export default class Project extends Component {
         className={this.state.isOpen ? "open" : ""}
         backgroundImage={this.props.project.background.url}
         backgroundColor={this.props.project.backgroundColor}
+        item={this.props.item}
         ref={Container => {
           this.projectItem = Container;
         }}
