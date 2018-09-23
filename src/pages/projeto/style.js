@@ -1,10 +1,25 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
+const entradaFade = keyframes`
+  0% { opacity: 0; }
+  30% { opacity: 0; }  
+  100% { opacity: 1; }
+`;
+const entradaTop = keyframes`
+  0% { martop: 200px; opacity: 0; }
+  40% { top: 200px; opacity: 0;}  
+  50% { opacity: 0; }  
+  100% { top: 0px; opacity: 1; }
+
+`;
 
 export const Main = styled.div`
   background: ${props =>
     props.backgroundColor ? props.backgroundColor : "#ffffff"};
   min-height: calc(100vh - 100px);
 `;
+
 export const Header = styled.header`
   height: 90vh;
   flex: 1;
@@ -33,6 +48,8 @@ export const ProjetBackground = styled.img`
   top: 0;
   z-index: 0;
   max-width: 100%;
+  animation: ${entradaFade} 1s;
+  animation-delay: 0s;
 `;
 
 export const Logo = styled.img`
@@ -50,6 +67,7 @@ export const Logo = styled.img`
     transform: translateX(0) rotate(0deg);
     filter: drop-shadow(0px 20px 10px #000000);
   }
+  animation: ${entradaFade} 2.5s;
 `;
 
 export const ProjetDescriptionBox = styled.div`
@@ -59,6 +77,7 @@ export const ProjetDescriptionBox = styled.div`
   flex: 1;
   position: relative;
   height: 100%;
+  animation: ${entradaTop} 2s;
 `;
 
 export const ProjetDescription = styled.div`
@@ -128,7 +147,7 @@ export const AgencyBox = styled.div`
       min-height: 100%;
     }
   }
-
+  animation: ${entradaTop} 1.6s;
   @media (max-width: 914px) {
     max-width: 100%;
     widowsheight: auto;
@@ -258,6 +277,7 @@ export const DestaqueBox = styled.div`
   flex: 1;
   position: relative;
   height: 450px;
+  animation: ${entradaTop} 2s;
   figure {
     width: 100%;
     img {
@@ -272,6 +292,7 @@ export const ProdutoDestaqueBox = styled.div`
   width: 100%;
   min-width: 320px;
   flex: 1;
+  animation: ${entradaTop} 2.2s;
   figure {
     width: 100%;
     img {
@@ -289,6 +310,8 @@ export const DestaquesBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${entradaTop} 2.8s;
+
   &:last-child {
     img {
       @media (max-width: 1064px) {
