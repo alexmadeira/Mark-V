@@ -65,7 +65,7 @@ export const Container = styled.div`
     width: calc(100% - 30px) !important;
   }
   &.open {
-    width: 100% !important;
+    width: calc(100% - 30px) !important;
     height: 95vh;
     flex: initial;
   }
