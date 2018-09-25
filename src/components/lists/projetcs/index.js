@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import queryString from "query-string";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -21,11 +20,7 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    const filter = queryString.stringify({
-      limit: this.props.limit,
-      order: this.props.order
-    });
-
+    const filter = `limit=${this.props.limit}&order=${this.props.order}`;
     this.props.getProjectsRequest(filter);
   }
 
