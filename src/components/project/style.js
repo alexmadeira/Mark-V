@@ -83,7 +83,7 @@ export const Preview = styled.div`
   position: relative;
   z-index: 2;
   overflow: hidden;
-  img {
+  .lt-image {
     max-width: 100%;
     width: 105vw;
   }

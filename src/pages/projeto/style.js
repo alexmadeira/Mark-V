@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
 
 const entradaFade = keyframes`
   0% { opacity: 0; }
@@ -40,34 +39,38 @@ export const Header = styled.header`
     position: relative;
     z-index: 1;
   }
-`;
-
-export const ProjetBackground = styled.img`
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 0;
-  max-width: 100%;
-  animation: ${entradaFade} 1s;
-  animation-delay: 0s;
-`;
-
-export const Logo = styled.img`
-  margin-top: 100px;
-  -webkit-transform: translateX(0) rotate(-25deg);
-  -moz-transform: translateX(0) rotate(-25deg);
-  -o-transform: translateX(0) rotate(-25deg);
-  transform: translateX(0) rotate(-25deg);
-  transition: all 0.5s;
-  filter: drop-shadow(0px 0px 10px #000000);
-  &:hover {
-    -webkit-transform: translateX(0) rotate(0deg);
-    -moz-transform: translateX(0) rotate(0deg);
-    -o-transform: translateX(0) rotate(0deg);
-    transform: translateX(0) rotate(0deg);
-    filter: drop-shadow(0px 20px 10px #000000);
+  .background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: initial;
+      &.preload {
+        width: 104%;
+        height: initial;
+      }
+    }
   }
-  animation: ${entradaFade} 2.5s;
+  .logo {
+    margin-top: 100px;
+    -webkit-transform: translateX(0) rotate(-25deg);
+    -moz-transform: translateX(0) rotate(-25deg);
+    -o-transform: translateX(0) rotate(-25deg);
+    transform: translateX(0) rotate(-25deg);
+    transition: all 0.5s;
+    filter: drop-shadow(0px 0px 10px #000000);
+    &:hover {
+      -webkit-transform: translateX(0) rotate(0deg);
+      -moz-transform: translateX(0) rotate(0deg);
+      -o-transform: translateX(0) rotate(0deg);
+      transform: translateX(0) rotate(0deg);
+      filter: drop-shadow(0px 20px 10px #000000);
+    }
+    animation: ${entradaFade} 2.5s;
+  }
 `;
 
 export const ProjetDescriptionBox = styled.div`
@@ -141,10 +144,16 @@ export const AgencyBox = styled.div`
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
-    img {
-      max-width: initial;
-      height: 100%;
-      min-height: 100%;
+    .lt-image {
+      img {
+        width: 100%;
+        height: initial;
+        &.preload {
+          left: 0;
+          width: 104%;
+          height: initial;
+        }
+      }
     }
   }
   animation: ${entradaTop} 1.6s;
@@ -281,8 +290,13 @@ export const DestaqueBox = styled.div`
   figure {
     width: 100%;
     img {
-      max-width: initial;
       width: 100%;
+      height: initial;
+      &.preload {
+        width: 104%;
+        left: 0;
+        height: initial;
+      }
     }
   }
 `;
@@ -296,8 +310,13 @@ export const ProdutoDestaqueBox = styled.div`
   figure {
     width: 100%;
     img {
-      max-width: initial;
       width: 100%;
+      height: initial;
+      &.preload {
+        width: 104%;
+        left: 0;
+        height: initial;
+      }
     }
   }
 `;
@@ -330,6 +349,13 @@ export const DestaquesBox = styled.div`
       min-height: 100%;
       max-width: initial;
       width: 100%;
+      height: initial;
+      &.preload {
+        width: 104%;
+        min-height: 100%;
+        left: 0;
+        height: initial;
+      }
     }
   }
 `;

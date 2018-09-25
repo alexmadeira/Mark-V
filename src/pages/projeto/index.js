@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Creators as ProjectAtions } from "../../store/ducks/project";
 
 import Back from "../../components/block/back";
+import Image from "../../components/block/image";
 
 import {
   Main,
@@ -12,10 +13,8 @@ import {
   AgencyBox,
   AgencyDescriptionBox,
   AgencyDescription,
-  Logo,
   ProjetDescription,
   ProjetDescriptionBox,
-  ProjetBackground,
   TitleBox,
   Title,
   DestaqueBox,
@@ -29,52 +28,53 @@ import {
 class Projeto extends Component {
   static propTypes = {
     project: PropTypes.shape({
-      id: PropTypes.number,
-      slug: PropTypes.string,
       name: PropTypes.string,
-      description: PropTypes.string,
       longDescription: PropTypes.string,
       backgroundColor: PropTypes.string,
-      url: PropTypes.string.isRequired,
-      preview: PropTypes.shape({
-        url: PropTypes.string,
-        name: PropTypes.string
-      }),
+      url: PropTypes.string,
       background: PropTypes.shape({
-        url: PropTypes.string
+        url: PropTypes.string.isRequired,
+        thumb: PropTypes.string.isRequired
       }),
       logo: PropTypes.shape({
-        url: PropTypes.string,
-        name: PropTypes.string
+        url: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        thumb: PropTypes.string.isRequired
       }),
       destaques: PropTypes.shape({
         princiapal: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         }),
         produto: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         }),
         esquerda: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         }),
         centro: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         }),
         direita: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         })
       }),
       agency: PropTypes.shape({
-        name: PropTypes.string,
-        description: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
         images: PropTypes.shape({
-          url: PropTypes.string,
-          name: PropTypes.string
+          url: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          thumb: PropTypes.string.isRequired
         })
       })
     })
@@ -99,9 +99,22 @@ const MainContent = ({ project }) => {
   return (
     <Fragment>
       <Header>
-        <ProjetBackground src={project.background.url} />
+        <Image
+          className="background"
+          src={{
+            preload: project.background.thumb,
+            content: project.background.url
+          }}
+        />
         <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <Logo src={project.logo.url} alt={project.logo.name} />
+          <Image
+            className="logo"
+            src={{
+              preload: project.logo.thumb,
+              content: project.logo.url
+            }}
+            alt={project.logo.name}
+          />
         </a>
         <ProjetDescriptionBox>
           <ProjetDescription>
@@ -122,23 +135,35 @@ const MainContent = ({ project }) => {
               </AgencyDescription>
             </AgencyDescriptionBox>
             <FigureBox>
-              <img
-                src={project.agency.image.url}
+              <Image
+                src={{
+                  preload: project.agency.image.thumb,
+                  content: project.agency.image.url
+                }}
                 alt={project.agency.image.name}
               />
             </FigureBox>
           </AgencyBox>
           <DestaqueBox>
             <FigureBox>
-              <img src={project.destaque.url} alt={project.destaque.name} />
+              <Image
+                src={{
+                  preload: project.destaque.thumb,
+                  content: project.destaque.url
+                }}
+                alt={project.destaque.name}
+              />
             </FigureBox>
           </DestaqueBox>
         </Row>
         <Row>
           <ProdutoDestaqueBox>
             <FigureBox>
-              <img
-                src={project.produtoDestaque.url}
+              <Image
+                src={{
+                  preload: project.produtoDestaque.thumb,
+                  content: project.produtoDestaque.url
+                }}
                 alt={project.produtoDestaque.name}
               />
             </FigureBox>
@@ -147,24 +172,33 @@ const MainContent = ({ project }) => {
         <Row className="topMargin noHorizontalMargin">
           <DestaquesBox>
             <FigureBox>
-              <img
-                src={project.destaqueEsquerda.url}
+              <Image
+                src={{
+                  preload: project.destaqueEsquerda.thumb,
+                  content: project.destaqueEsquerda.url
+                }}
                 alt={project.destaqueEsquerda.name}
               />
             </FigureBox>
           </DestaquesBox>
           <DestaquesBox>
             <FigureBox>
-              <img
-                src={project.destaqueCentro.url}
+              <Image
+                src={{
+                  preload: project.destaqueCentro.thumb,
+                  content: project.destaqueCentro.url
+                }}
                 alt={project.destaqueCentro.name}
               />
             </FigureBox>
           </DestaquesBox>
           <DestaquesBox>
             <FigureBox>
-              <img
-                src={project.destaqueDireita.url}
+              <Image
+                src={{
+                  preload: project.destaqueDireita.thumb,
+                  content: project.destaqueDireita.url
+                }}
                 alt={project.destaqueDireita.name}
               />
             </FigureBox>

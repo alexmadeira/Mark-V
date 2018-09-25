@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import scrollToElement from "scroll-to-element";
 import PropTypes from "prop-types";
 
+import Image from "../block/image";
+
 import {
   Container,
   Preview,
@@ -43,7 +45,8 @@ export default class Project extends Component {
       }).isRequired,
       preview: PropTypes.shape({
         url: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
+        name: PropTypes.string.isRequired,
+        thumb: PropTypes.string.isRequired
       }).isRequired
     })
   };
@@ -79,9 +82,11 @@ export default class Project extends Component {
           className={this.state.isOpen ? "open" : ""}
           backgroundColor={this.props.project.previewColor}
         >
-          <img
-            src={this.props.project.preview.url}
-            alt={this.props.project.preview.name}
+          <Image
+            src={{
+              preload: this.props.project.preview.thumb,
+              content: this.props.project.preview.url
+            }}
           />
         </Preview>
         <Logo className={this.state.isOpen ? "open" : ""}>

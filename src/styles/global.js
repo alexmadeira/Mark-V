@@ -19,4 +19,31 @@ body{
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
 }
+.lt-image {
+  position: relative;
+  overflow: hidden;
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    display:block;
+    &.preload {
+      display: block;
+      position: absolute;
+      height: 104%;
+      left: -2%;
+      top: -2%;
+      z-index: 2;
+      filter: blur(10px);
+      transition: opacity .3s;
+    }
+  }
+  &._loaded {
+    img {
+      &.preload {
+        opacity: 0;
+      }
+    }
+  }
+}
+
 `;
