@@ -156,6 +156,7 @@ export const AgencyBox = styled.div`
   position: relative;
   margin: 15px;
   max-height: 100%;
+  min-height: 33vw;
   figure {
     width: calc(100% - 20px);
     @media (max-width: 1200px) {
@@ -309,7 +310,7 @@ export const DestaqueBox = styled.div`
   min-width: 60%;
   flex: 1;
   position: relative;
-  height: 30vw;
+  height: 33vw;
   animation: ${entradaTop} 2s;
   figure {
     width: 100%;
@@ -327,7 +328,6 @@ export const DestaqueBox = styled.div`
     }
   }
   @media (max-width: 1064px) {
-    height: initial;
     max-width: initial;
     width: calc(100% + 15px);
   }
