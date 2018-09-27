@@ -45,12 +45,15 @@ export const Header = styled.header`
     top: 0;
     z-index: 0;
     max-width: 100%;
-    img {
+    &.lt-image {
       width: 100%;
-      height: initial;
-      &.preload {
-        width: 104%;
+      img {
+        width: 100%;
         height: initial;
+        &.preload {
+          width: 104%;
+          height: initial;
+        }
       }
     }
   }
@@ -96,6 +99,7 @@ export const ProjetDescription = styled.div`
     max-width: calc(100% - 30px);
     margin-left: 15px;
     margin-right: 15px;
+    margin-bottom: 0;
   }
 
   h2 {
@@ -118,9 +122,9 @@ export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  width: calc(100vw - 15px);
   position: relative;
-  left: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
   & > * {
     margin: 0 15px;
   }
@@ -132,7 +136,7 @@ export const AgencyBox = styled.div`
   max-width: 33.333%;
   position: relative;
   margin: 15px;
-  max-height: 450px;
+  max-height: 100%;
   figure {
     width: calc(100% - 20px);
     @media (max-width: 1200px) {
@@ -145,6 +149,7 @@ export const AgencyBox = styled.div`
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
     .lt-image {
+      width: 100%;
       img {
         width: 100%;
         height: initial;
@@ -158,8 +163,8 @@ export const AgencyBox = styled.div`
   }
   animation: ${entradaTop} 1.6s;
   @media (max-width: 914px) {
-    max-width: 100%;
-    widowsheight: auto;
+    max-width: 88%;
+    height: auto;
   }
 `;
 export const AgencyDescriptionBox = styled.div``;
@@ -285,37 +290,47 @@ export const DestaqueBox = styled.div`
   min-width: 60%;
   flex: 1;
   position: relative;
-  height: 450px;
+  height: 30vw;
   animation: ${entradaTop} 2s;
   figure {
     width: 100%;
-    img {
+    .lt-image {
       width: 100%;
-      height: initial;
-      &.preload {
-        width: 104%;
-        left: 0;
+      img {
+        width: 100%;
         height: initial;
+        &.preload {
+          width: 104%;
+          left: 0;
+          height: initial;
+        }
       }
     }
+  }
+  @media (max-width: 1064px) {
+    height: initial;
+    max-width: initial;
+    width: calc(100% + 15px);
   }
 `;
 export const ProdutoDestaqueBox = styled.div`
   position: relative;
   margin: 15px;
   width: 100%;
-  min-width: 320px;
   flex: 1;
   animation: ${entradaTop} 2.2s;
   figure {
     width: 100%;
-    img {
+    .lt-image {
       width: 100%;
-      height: initial;
-      &.preload {
-        width: 104%;
-        left: 0;
+      img {
+        width: 100%;
         height: initial;
+        &.preload {
+          width: 104%;
+          left: 0;
+          height: initial;
+        }
       }
     }
   }
@@ -325,7 +340,7 @@ export const DestaquesBox = styled.div`
   flex: 1;
   margin: 15px;
   width: 100%;
-  min-width: 320px;
+  min-width: 290px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,16 +360,19 @@ export const DestaquesBox = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    img {
-      min-height: 100%;
-      max-width: initial;
+    .lt-image {
       width: 100%;
-      height: initial;
-      &.preload {
-        width: 104%;
+      img {
         min-height: 100%;
-        left: 0;
+        max-width: initial;
+        width: 100%;
         height: initial;
+        &.preload {
+          width: 104%;
+          min-height: 100%;
+          left: 0;
+          height: initial;
+        }
       }
     }
   }

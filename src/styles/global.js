@@ -8,9 +8,10 @@ injectGlobal`
 }
 html,body,#root{
   height:100%;
+  overflow-x: hidden;
+
 }
 html {
-  overflow-x: hidden;
 }
 body{
   text-rendering:optimizeLegibility!important;

@@ -42,7 +42,13 @@ const Home = () => (
       <h3>Gostou do que viu?</h3>
       <p>Entre em contato, ou não</p>
       <div>
-        <Buttom to="#">Contato</Buttom>
+        <A
+          href="mailto:alex@alexmadeira.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contato
+        </A>
       </div>
     </Basic>
   </Main>
