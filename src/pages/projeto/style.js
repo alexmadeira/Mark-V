@@ -33,7 +33,7 @@ export const Header = styled.header`
     flex-direction: column;
   }
   @media (max-width: 480px) {
-    height: 80vh;
+    height: 100vh;
   }
   & > * {
     position: relative;
@@ -50,6 +50,7 @@ export const Header = styled.header`
       img {
         width: 100%;
         height: initial;
+
         &.preload {
           width: 104%;
           height: initial;
@@ -72,7 +73,25 @@ export const Header = styled.header`
       transform: translateX(0) rotate(0deg);
       filter: drop-shadow(0px 20px 10px #000000);
     }
+    @media (max-width: 480px) {
+      -webkit-transform: translateX(0) rotate(0deg);
+      -moz-transform: translateX(0) rotate(0deg);
+      -o-transform: translateX(0) rotate(0deg);
+      transform: translateX(0) rotate(0deg);
+    }
     animation: ${entradaFade} 2.5s;
+
+    &.lt-image {
+      width: 100%;
+      img {
+        width: 100%;
+        height: initial;
+        &.preload {
+          width: 104%;
+          height: initial;
+        }
+      }
+    }
   }
 `;
 
