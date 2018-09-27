@@ -25,7 +25,6 @@ export const Container = styled.div`
   background-size: cover;
   opacity: 1;
   animation: ${entrada} ${props => (props.item ? 1 + props.item / 5 : 1)}s;
-
   ${props =>
     props.backgroundImage
       ? `background-image: url(${props.backgroundImage});`
@@ -86,6 +85,11 @@ export const Preview = styled.div`
   .lt-image {
     max-width: 100%;
     width: 105vw;
+    img {
+      @media (max-width: 720px) {
+        width: 100%;
+      }
+    }
   }
 
   ${props =>
@@ -154,14 +158,14 @@ export const DescriptionBox = styled.div`
   left: -10px;
   bottom: -10px;
   max-width: 80%;
-  
+
   &.open {
     opacity: 0;
   }
 
   @media (max-width: 460px) {
     display: none;
-  }s
+  }
 `;
 
 export const BigDescriptionBox = styled.div`
