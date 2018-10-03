@@ -6,6 +6,7 @@ import { Creators as ProjectAtions } from "../../store/ducks/project";
 
 import Back from "../../components/block/back";
 import Image from "../../components/block/image";
+import NextProject from "../../components/project";
 
 import {
   Main,
@@ -21,6 +22,7 @@ import {
   ProdutoDestaqueBox,
   DestaquesBox,
   FigureBox,
+  NextProjectBox,
   Header,
   Row
 } from "./style";
@@ -80,16 +82,28 @@ class Projeto extends Component {
     })
   };
 
-  componentDidMount() {
+  requestProject() {
     const { slug } = this.props.match.params;
     this.props.getProjectRequest(slug);
+  }
+
+  componentDidMount() {
+    this.requestProject();
+    this.props.history.listen((location, action) => {
+      window.location.reload();
+    });
   }
 
   render() {
     return (
       <Main backgroundColor={this.props.project.backgroundColor}>
         <Back to={"/projetos"} text="Projetos" />
-        {this.props.project.id && <MainContent project={this.props.project} />}
+        {this.props.project.id && (
+          <MainContent
+            project={this.props.project}
+            nextProject={this.props.nextProject}
+          />
+        )}
       </Main>
     );
   }
@@ -204,6 +218,13 @@ const MainContent = ({ project }) => {
             </FigureBox>
           </DestaquesBox>
         </Row>
+        <NextProjectBox>
+          <NextProject
+            project={project.nextProject}
+            simple={true}
+            nextProjectLink={true}
+          />
+        </NextProjectBox>
       </Container>
     </Fragment>
   );

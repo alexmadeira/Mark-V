@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import scrollToElement from "scroll-to-element";
+import classNames from "classnames";
 import PropTypes from "prop-types";
 
 import Image from "../block/image";
-
 import {
   Container,
   Preview,
@@ -17,7 +17,8 @@ import {
   Logo,
   ViewMore,
   Buttom,
-  ButtomLink
+  ButtomLink,
+  NextProjectLink
 } from "./style";
 
 export default class Project extends Component {
@@ -68,9 +69,14 @@ export default class Project extends Component {
   }
 
   render() {
+    const projectClass = classNames(
+      this.props.className,
+      this.state.isOpen ? "open" : ""
+    );
+
     return (
       <Container
-        className={this.state.isOpen ? "open" : ""}
+        className={projectClass}
         backgroundImage={this.props.project.background.url}
         backgroundColor={this.props.project.backgroundColor}
         item={this.props.item}
@@ -78,6 +84,15 @@ export default class Project extends Component {
           this.projectItem = Container;
         }}
       >
+        {this.props.nextProjectLink && (
+          <NextProjectLink to={`/projeto/${this.props.project.slug}`}>
+            <img
+              src={this.props.project.preview.thumb}
+              alt={this.props.project.name}
+            />
+            <span>Próximo projeto</span>
+          </NextProjectLink>
+        )}
         <Preview
           className={this.state.isOpen ? "open" : ""}
           backgroundColor={this.props.project.previewColor}
@@ -97,9 +112,12 @@ export default class Project extends Component {
             />
           </LogoLink>
         </Logo>
-        <TitleBox className={this.state.isOpen ? "open" : ""}>
-          <Title>{this.props.project.name}</Title>
-        </TitleBox>
+        {!this.props.nextProjectLink && (
+          <TitleBox className={this.state.isOpen ? "open" : ""}>
+            <Title>{this.props.project.name}</Title>
+          </TitleBox>
+        )}
+
         {!this.props.simple && (
           <Fragment>
             {!this.state.isOpen ? (
@@ -116,9 +134,11 @@ export default class Project extends Component {
             )}
           </Fragment>
         )}
-        <DescriptionBox className={this.state.isOpen ? "open" : ""}>
-          <Description>{this.props.project.description}</Description>
-        </DescriptionBox>
+        {!this.props.nextProjectLink && (
+          <DescriptionBox className={this.state.isOpen ? "open" : ""}>
+            <Description>{this.props.project.description}</Description>
+          </DescriptionBox>
+        )}
 
         <BigDescriptionBox className={this.state.isOpen ? "open" : ""}>
           <p>{this.props.project.longDescription}</p>

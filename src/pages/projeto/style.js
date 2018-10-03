@@ -134,6 +134,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   position: relative;
   padding: 15px;
+  margin-bottom: -1px;
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%);
 `;
 
@@ -337,7 +338,11 @@ export const ProdutoDestaqueBox = styled.div`
   margin: 15px;
   width: 100%;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   animation: ${entradaTop} 2.2s;
+  overflow: hidden;
   figure {
     width: 100%;
     .lt-image {
@@ -362,9 +367,9 @@ export const DestaquesBox = styled.div`
   min-width: 290px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   animation: ${entradaTop} 2.8s;
-
+  overflow: hidden;
   &:last-child {
     img {
       @media (max-width: 1064px) {
@@ -396,6 +401,7 @@ export const DestaquesBox = styled.div`
     }
   }
 `;
+
 export const FigureBox = styled.figure`
   border: 1px solid #ffffff;
   height: ${props => (props.height ? `${props.height}px` : "auto")};
@@ -408,5 +414,18 @@ export const FigureBox = styled.figure`
   img {
     min-height: 100%;
     max-width: 100%;
+  }
+`;
+
+export const NextProjectBox = styled.div`
+  display: flex;
+  width: 100%;
+  left: -15px;
+  max-height: 400px;
+  flex: 1;
+  & > * {
+    min-width: calc(100% - 30px);
+    margin: 0;
+    border-color: #fff;
   }
 `;

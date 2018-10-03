@@ -73,6 +73,68 @@ export const Container = styled.div`
   }
 `;
 
+export const NextProjectLink = styled(Link)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: all 0.2s linear;
+  text-decoration: none;
+  font-weight: normal;
+  touch-action: manipulation;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 20px;
+  overflow: hidden;
+  display: block;
+
+  &::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    transition: all 0.2s linear;
+  }
+  img {
+    width: 104%;
+    left: -2%;
+    top: -2%;
+    z-index: 1;
+    position: absolute;
+    filter: blur(10px);
+  }
+
+  span {
+    color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 47px;
+    opacity: 0;
+    transition: all 0.2s linear;
+    z-index: 3;
+    position: relative;
+    left: 46%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    span {
+      opacity: 1;
+    }
+  }
+`;
+
 export const Preview = styled.div`
   display: flex;
   justify-content: center;
