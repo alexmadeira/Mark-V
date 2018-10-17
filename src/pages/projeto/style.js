@@ -188,7 +188,9 @@ export const AgencyBox = styled.div`
     height: auto;
   }
 `;
-export const AgencyDescriptionBox = styled.div``;
+export const AgencyDescriptionBox = styled.div`
+  z-index: 4;
+`;
 export const AgencyDescription = styled.div`
   background: #fff;
   border: 3px solid #000;

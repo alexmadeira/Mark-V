@@ -173,7 +173,7 @@ export const TitleBox = styled.div`
   background: -o-linear-gradient(left, #ed942f 0%, #ffd702 100%);
   background: -ms-linear-gradient(left, #ed942f 0%, #ffd702 100%);
   background: linear-gradient(to right, #ed942f 0%, #ffd702 100%);
-  z-index: 10;
+  z-index: 3;
   position: absolute;
   right: 0px;
   top: 0px;
