@@ -11,7 +11,7 @@ const entrada = keyframes`
 export const Container = styled.div`
   background: ${props => (props.bgcolor ? props.bgcolor : "#FFFFFF")};
   border: 1px solid #000;
-  flex: 1;
+  /* flex: 1; */
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 15px;
