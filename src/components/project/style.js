@@ -104,7 +104,7 @@ export const NextProjectLink = styled(Link)`
     transition: all 0.2s linear;
   }
   img {
-    width: 104%;
+    height: 104%;
     left: -2%;
     top: -2%;
     z-index: 1;
