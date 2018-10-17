@@ -92,7 +92,9 @@ export const NextProjectLink = styled(Link)`
   font-size: 20px;
   overflow: hidden;
   display: block;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &::before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
@@ -121,8 +123,8 @@ export const NextProjectLink = styled(Link)`
     transition: all 0.2s linear;
     z-index: 3;
     position: relative;
-    left: 46%;
-    top: 46%;
+    /* left: 46%;
+    top: 46%; */
     transform: translate(-50%, -50%);
   }
   &:hover {
