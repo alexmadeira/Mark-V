@@ -123,9 +123,6 @@ export const NextProjectLink = styled(Link)`
     transition: all 0.2s linear;
     z-index: 3;
     position: relative;
-    /* left: 46%;
-    top: 46%; */
-    transform: translate(-50%, -50%);
   }
   &:hover {
     &::before {
