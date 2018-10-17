@@ -424,7 +424,7 @@ export const NextProjectBox = styled.div`
   max-height: 400px;
   flex: 1;
   & > * {
-    min-width: calc(100% - 30px);
+    min-width: 100%;
     margin: 0;
     border-color: #fff;
   }
