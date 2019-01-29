@@ -125,11 +125,13 @@ export const NextProjectLink = styled(Link)`
     z-index: 3;
     position: relative;
   }
+
   .logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0) rotate(0);
   }
+
   &:hover {
     &::before {
       background-color: rgba(0, 0, 0, 0.7);
