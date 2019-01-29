@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Main = styled.div`
   background: #ffffff;
   min-height: calc(100vh - 100px);
+  /* height: 100vh; */
 `;
 
 export const Inclina = styled.div`
@@ -13,7 +14,7 @@ export const Inclina = styled.div`
   @media (min-width: 992px) {
     transform: translate(-50%, 0) rotate(-5deg);
     width: 120vw;
-    margin-top: -100px;
+    margin-top: -120px;
     position: relative;
     left: 50%;
   }
