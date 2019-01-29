@@ -90,6 +90,12 @@ export default class Project extends Component {
               src={this.props.project.preview.thumb}
               alt={this.props.project.name}
             />
+            <Logo className="logo">
+              <img
+                src={this.props.project.logo.url}
+                alt={this.props.project.logo.name}
+              />
+            </Logo>
             <span>Próximo projeto</span>
           </NextProjectLink>
         )}

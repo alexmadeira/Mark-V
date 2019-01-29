@@ -106,9 +106,10 @@ export const NextProjectLink = styled(Link)`
     transition: all 0.2s linear;
   }
   img {
-    height: 104%;
+    width: 104%;
     left: -2%;
-    top: -2%;
+    top: 50%;
+    transform: translate(0, -50%);
     z-index: 1;
     position: absolute;
     filter: blur(10px);
@@ -124,12 +125,20 @@ export const NextProjectLink = styled(Link)`
     z-index: 3;
     position: relative;
   }
+  .logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(0);
+  }
   &:hover {
     &::before {
       background-color: rgba(0, 0, 0, 0.7);
     }
     span {
       opacity: 1;
+    }
+    .logo {
+      left: 38%;
     }
   }
 `;
