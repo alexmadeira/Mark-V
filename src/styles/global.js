@@ -24,15 +24,14 @@ body{
   position: relative;
   overflow: hidden;
   img {
-    min-width: 100%;
-    min-height: 100%;
+    min-height: 104%;
     display:block;
     &.preload {
       display: block;
       position: absolute;
       height: 104%;
-      left: -2%;
-      top: -2%;
+      left: 50%;
+      transform: translate(-50%,0);
       z-index: 2;
       filter: blur(10px);
       transition: opacity .3s;

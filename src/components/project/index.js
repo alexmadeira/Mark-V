@@ -18,7 +18,8 @@ import {
   ViewMore,
   Buttom,
   ButtomLink,
-  NextProjectLink
+  NextProjectLink,
+  ProjectLink
 } from "./style";
 
 export default class Project extends Component {
@@ -71,7 +72,8 @@ export default class Project extends Component {
   render() {
     const projectClass = classNames(
       this.props.className,
-      this.state.isOpen ? "open" : ""
+      this.state.isOpen ? "open" : "",
+      this.props.simple ? "simple" : ""
     );
 
     return (
@@ -84,6 +86,9 @@ export default class Project extends Component {
           this.projectItem = Container;
         }}
       >
+        {this.props.simple && (
+          <ProjectLink to={`/projeto/${this.props.project.slug}`} />
+        )}
         {this.props.nextProjectLink && (
           <NextProjectLink to={`/projeto/${this.props.project.slug}`}>
             <img
@@ -123,7 +128,6 @@ export default class Project extends Component {
             <Title>{this.props.project.name}</Title>
           </TitleBox>
         )}
-
         {!this.props.simple && (
           <Fragment>
             {!this.state.isOpen ? (
@@ -141,11 +145,14 @@ export default class Project extends Component {
           </Fragment>
         )}
         {!this.props.nextProjectLink && (
-          <DescriptionBox className={this.state.isOpen ? "open" : ""}>
+          <DescriptionBox
+            className={
+              this.state.isOpen ? "open DescriptionBox" : "DescriptionBox"
+            }
+          >
             <Description>{this.props.project.description}</Description>
           </DescriptionBox>
         )}
-
         <BigDescriptionBox className={this.state.isOpen ? "open" : ""}>
           <p>{this.props.project.longDescription}</p>
         </BigDescriptionBox>

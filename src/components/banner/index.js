@@ -97,8 +97,8 @@ class Banner extends Component {
             </ParallaxMousemove.Layer>
             <ParallaxMousemove.Layer
               config={{
-                xFactor: 0.06,
-                yFactor: 0.06
+                xFactor: 0.07,
+                yFactor: 0.07
               }}
               layerStyle={{
                 width: "100%",
@@ -111,8 +111,8 @@ class Banner extends Component {
 
             <ParallaxMousemove.Layer
               config={{
-                xFactor: 0.07,
-                yFactor: 0.07
+                xFactor: 0.08,
+                yFactor: 0.08
               }}
               layerStyle={{
                 width: "100%",

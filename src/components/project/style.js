@@ -9,7 +9,6 @@ const entrada = keyframes`
 `;
 
 export const Container = styled.div`
-  background: ${props => (props.bgcolor ? props.bgcolor : "#FFFFFF")};
   border: 1px solid #000;
   flex: 1;
   margin-top: 15px;
@@ -31,7 +30,13 @@ export const Container = styled.div`
       : ""};
 
   ${props =>
-    props.backgroundColor ? `background-color:${props.backgroundColor};` : ""};
+    props.backgroundColor
+      ? `background-color:${props.backgroundColor};`
+      : "#FFFFFF"};
+
+  &:hover {
+    background-size: 104%;
+  }
 
   &:nth-child(9n + 1) {
     width: calc(25% - 30px);
@@ -70,6 +75,17 @@ export const Container = styled.div`
   }
   img {
     max-width: initial !important;
+  }
+  &.simple {
+    @media (min-width: 992px) {
+      &:nth-child(9n + 4),
+      &:nth-child(9n + 1) {
+        .DescriptionBox {
+          left: initial;
+          right: -10px;
+        }
+      }
+    }
   }
 `;
 
@@ -157,6 +173,9 @@ export const Preview = styled.div`
   .lt-image {
     max-width: 100%;
     width: 105vw;
+    display: flex;
+    justify-content: center;
+    height: 100%;
     img {
       @media (max-width: 720px) {
         width: 100%;
@@ -270,6 +289,16 @@ export const Description = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const ProjectLink = styled(Link)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  display: block;
 `;
 export const LogoLink = styled(Link)`
   &:hover {
