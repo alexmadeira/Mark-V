@@ -34,10 +34,6 @@ export const Container = styled.div`
       ? `background-color:${props.backgroundColor};`
       : "#FFFFFF"};
 
-  &:hover {
-    background-size: 104%;
-  }
-
   &:nth-child(9n + 1) {
     width: calc(25% - 30px);
   }

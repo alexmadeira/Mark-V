@@ -30,8 +30,8 @@ body{
       display: block;
       position: absolute;
       height: 104%;
-      left: 50%;
-      transform: translate(-50%,0);
+        left: 50%;
+        transform: translate(-50%,0);
       z-index: 2;
       filter: blur(10px);
       transition: opacity .3s;
