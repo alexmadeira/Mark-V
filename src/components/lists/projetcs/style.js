@@ -8,6 +8,9 @@ export const Container = styled.div`
   position: relative;
   padding-top: 15px;
   padding-bottom: 15px;
+  &.respiro {
+    padding-top: 60px;
+  }
 `;
 
 export const Row = styled.div`

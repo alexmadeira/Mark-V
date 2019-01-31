@@ -26,7 +26,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className={!this.props.simple && "respiro"}>
         <Row>
           {this.props.projects.data.map((project, i) => (
             <Project

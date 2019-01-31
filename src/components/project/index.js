@@ -57,17 +57,17 @@ export default class Project extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.isOpen !== prevState.isOpen) {
-      setTimeout(() => {
-        scrollToElement(ReactDOM.findDOMNode(this), {
-          offset: -20,
-          ease: "out-expo",
-          duration: 1000
-        });
-      }, 300);
-    }
-  }
+  // componentDidUpdate(_prevProps, prevState) {
+  //   if (this.state.isOpen !== prevState.isOpen) {
+  //     setTimeout(() => {
+  //       scrollToElement(ReactDOM.findDOMNode(this), {
+  //         offset: -20,
+  //         ease: "out-expo",
+  //         duration: 1000
+  //       });
+  //     }, 300);
+  //   }
+  // }
 
   render() {
     const projectClass = classNames(
