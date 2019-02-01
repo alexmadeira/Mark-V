@@ -24,15 +24,20 @@ export const Container = styled.div`
   background-size: cover;
   opacity: 1;
   animation: ${entrada} ${props => (props.item ? 1 + props.item / 5 : 1)}s;
-  ${props =>
-    props.backgroundImage
-      ? `background-image: url(${props.backgroundImage});`
-      : ""};
+  background: ${props => (props.bgcolor ? `url(${props.bgcolor})` : "#FFFFFF")};
 
-  ${props =>
-    props.backgroundColor
-      ? `background-color:${props.backgroundColor};`
-      : "#FFFFFF"};
+  &::after {
+    content: "";
+    background-image: url(${props => props.bgimage});
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    transition: all 0.2s;
+    z-index: 0;
+  }
 
   &:nth-child(9n + 1) {
     width: calc(25% - 30px);
@@ -68,6 +73,9 @@ export const Container = styled.div`
     width: calc(100% - 30px) !important;
     height: 95vh;
     flex: initial;
+    &::after {
+      visibility: visible;
+    }
   }
   img {
     max-width: initial !important;
@@ -169,18 +177,16 @@ export const Preview = styled.div`
   .lt-image {
     max-width: 100%;
     width: 105vw;
-    display: flex;
-    justify-content: center;
-    height: 100%;
     img {
+      min-width: -webkit-fill-available;
+      min-height: 100%;
       @media (max-width: 720px) {
         width: 100%;
       }
     }
   }
 
-  ${props =>
-    props.backgroundColor ? `background-color:${props.backgroundColor};` : ""};
+  ${props => (props.bgcolor ? `background-color:${props.bgcolor};` : "")};
   &.open {
     opacity: 0;
   }

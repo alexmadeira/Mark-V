@@ -5,7 +5,7 @@ import Basic from "../../components/block/basic";
 import Buttom from "../../components/buttons/outline";
 
 import "../../styles/global";
-import { Main, Inclina, Center, A } from "./style";
+import { Main, Inclina, Center, A, FigureBox } from "./style";
 
 const Home = () => (
   <Main>
@@ -31,12 +31,12 @@ const Home = () => (
       <h2 className="title">
         Layout responsivo, fluido, mobile e todas as variacões possíveis
       </h2>
-      <figure>
+      <FigureBox>
         <img
           src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/Responsive.jpg"
           alt="responsive"
         />
-      </figure>
+      </FigureBox>
     </Basic>
     <Basic>
       <h3>Gostou do que viu?</h3>

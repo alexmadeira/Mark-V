@@ -57,6 +57,12 @@ export const Center = styled.div`
   flex-wrap: wrap;
 `;
 
+export const FigureBox = styled.figure`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;

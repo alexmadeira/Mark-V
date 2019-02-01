@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ParallaxMousemove from "react-parallax-mousemove";
 
 export const Container = styled.div`
   display: flex;

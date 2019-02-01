@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
-import scrollToElement from "scroll-to-element";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -57,18 +55,6 @@ export default class Project extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
-  // componentDidUpdate(_prevProps, prevState) {
-  //   if (this.state.isOpen !== prevState.isOpen) {
-  //     setTimeout(() => {
-  //       scrollToElement(ReactDOM.findDOMNode(this), {
-  //         offset: -20,
-  //         ease: "out-expo",
-  //         duration: 1000
-  //       });
-  //     }, 300);
-  //   }
-  // }
-
   render() {
     const projectClass = classNames(
       this.props.className,
@@ -78,13 +64,14 @@ export default class Project extends Component {
 
     return (
       <Container
+        name={this.props.project.slug}
         className={projectClass}
-        backgroundImage={this.props.project.background.url}
-        backgroundColor={this.props.project.backgroundColor}
         item={this.props.item}
         ref={Container => {
           this.projectItem = Container;
         }}
+        bgimage={this.props.project.background.url}
+        bgcolor={this.props.project.backgroundColor}
       >
         {this.props.simple && (
           <ProjectLink to={`/projeto/${this.props.project.slug}`} />

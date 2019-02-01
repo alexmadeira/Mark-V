@@ -1,8 +1,8 @@
 import { injectGlobal, keyframes } from "styled-components";
 
 const fade = keyframes`
-  0% { opacity: 0; }
- 100% { opacity: 1; }
+0% { opacity: 0; }
+100% { opacity: 1; }
 `;
 
 injectGlobal`
@@ -39,10 +39,10 @@ body{
     &.preload {
       display: block;
       position: absolute;
-      height: 104%;
-      left: 50%;
-      top:50%;
-      transform: translate(-50%,-50%);
+      top: -2%;
+      left: -2%;
+      
+      height: 104%!important;
       z-index: 2;
       animation: ${fade} 50ms;
       filter: blur(10px);
@@ -61,10 +61,10 @@ body{
   background: #ed942f!important;
   background: -moz-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
   background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, #ed942f),
-    color-stop(100%, #ffd702)
+  left top,
+  right top,
+  color-stop(0%, #ed942f),
+  color-stop(100%, #ffd702)
   )!important;
   background: -webkit-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
   background: -o-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
