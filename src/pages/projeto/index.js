@@ -95,6 +95,7 @@ class Projeto extends Component {
   }
 
   render() {
+    console.tron.log(this.props.project.backgroundColor);
     return (
       <Main backgroundColor={this.props.project.backgroundColor}>
         <Back to={"/projetos"} text="Projetos" />

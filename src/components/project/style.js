@@ -23,7 +23,6 @@ export const Container = styled.div`
   transition: all 0.2s;
   background-size: cover;
   opacity: 1;
-  /* overflow: hidden; */
   animation: ${entrada} ${props => (props.item ? 1 + props.item / 5 : 1)}s;
   ${props =>
     props.backgroundImage

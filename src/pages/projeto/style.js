@@ -10,12 +10,20 @@ const entradaTop = keyframes`
   40% { top: 200px; opacity: 0;}  
   50% { opacity: 0; }  
   100% { top: 0px; opacity: 1; }
+`;
 
+const backgroundColor = keyframes`
+  0% { background-color: #fff; }
+  100% { 
+    background-color:  ${props =>
+      props.backgroundColor ? props.backgroundColor : "#fff"}; 
+  }
 `;
 
 export const Main = styled.div`
   background: ${props =>
-    props.backgroundColor ? props.backgroundColor : "#ffffff"};
+    props.backgroundColor ? props.backgroundColor : "#fff"};
+  animation: ${backgroundColor} 1.5s;
   min-height: calc(100vh - 100px);
 `;
 
@@ -160,6 +168,8 @@ export const AgencyBox = styled.div`
   min-height: 33vw;
   figure {
     width: calc(100% - 20px);
+    height: 100%;
+
     @media (max-width: 1200px) {
       width: 100%;
     }
@@ -175,7 +185,6 @@ export const AgencyBox = styled.div`
         width: 100%;
         height: initial;
         &.preload {
-          left: 0;
           width: 104%;
           height: initial;
         }
@@ -317,6 +326,8 @@ export const DestaqueBox = styled.div`
   animation: ${entradaTop} 2s;
   figure {
     width: 100%;
+    height: 100%;
+
     .lt-image {
       width: 100%;
       img {
@@ -324,7 +335,6 @@ export const DestaqueBox = styled.div`
         height: initial;
         &.preload {
           width: 104%;
-          left: 0;
           height: initial;
         }
       }
@@ -347,6 +357,7 @@ export const ProdutoDestaqueBox = styled.div`
   overflow: hidden;
   figure {
     width: 100%;
+    height: 100%;
     .lt-image {
       width: 100%;
       img {
@@ -354,7 +365,6 @@ export const ProdutoDestaqueBox = styled.div`
         height: initial;
         &.preload {
           width: 104%;
-          left: 0;
           height: initial;
         }
       }
@@ -386,6 +396,7 @@ export const DestaquesBox = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
     .lt-image {
       width: 100%;
       img {
@@ -396,7 +407,6 @@ export const DestaquesBox = styled.div`
         &.preload {
           width: 104%;
           min-height: 100%;
-          left: 0;
           height: initial;
         }
       }

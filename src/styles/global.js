@@ -1,4 +1,10 @@
-import { injectGlobal } from "styled-components";
+import { injectGlobal, keyframes } from "styled-components";
+
+const fade = keyframes`
+  0% { opacity: 0; }
+ 100% { opacity: 1; }
+`;
+
 injectGlobal`
 *{
   margin:0;
@@ -6,35 +12,40 @@ injectGlobal`
   box-sizing: border-box;
   outline:0;
 }
-html,body,#root{
-  height:100%;
-  overflow-x: hidden;
 
+html,body,#root{
+  height:100vh;
+  overflow-x: hidden; background: #fff;
 }
-html {
-}
+
+html {}
+
 body{
   text-rendering:optimizeLegibility!important;
   -webkit-font-smoothing: antialiased!important;
-  background: #ffffff;
+  background: #fff;
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
 }
+
 .lt-image {
   position: relative;
   overflow: hidden;
   img {
-    min-height: 104%;
+    min-height: 100%;
     display:block;
+    transition: opacity 1s;
+    animation: ${fade} 5s;
     &.preload {
       display: block;
       position: absolute;
       height: 104%;
-        left: 50%;
-        transform: translate(-50%,0);
+      left: 50%;
+      top:50%;
+      transform: translate(-50%,-50%);
       z-index: 2;
+      animation: ${fade} 50ms;
       filter: blur(10px);
-      transition: opacity .3s;
     }
   }
   &._loaded {
@@ -45,18 +56,28 @@ body{
     }
   }
 }
-
-
 #nprogress .bar {
-  background: #f00;
+  height: 5px!important;
+  background: #ed942f!important;
+  background: -moz-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, #ed942f),
+    color-stop(100%, #ffd702)
+  )!important;
+  background: -webkit-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
+  background: -o-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
+  background: -ms-linear-gradient(left, #ed942f 0%, #ffd702 100%)!important;
+  background: linear-gradient(to right, #ed942f 0%, #ffd702 100%)!important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px  #f00, 0 0 5px  #f00;
+  box-shadow: 0 0 10px  #ed942f, 0 0 5px  #ffd702!important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color:  #f00;
-  border-left-color:  #f00;
+  border-top-color:  #ed942f!important;
+  border-left-color:  #ffd702!important;
 }
 `;
