@@ -46,4 +46,17 @@ body{
   }
 }
 
+
+#nprogress .bar {
+  background: #f00;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px  #f00, 0 0 5px  #f00;
+}
+
+#nprogress .spinner-icon {
+  border-top-color:  #f00;
+  border-left-color:  #f00;
+}
 `;
