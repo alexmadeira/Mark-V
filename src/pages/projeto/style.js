@@ -180,13 +180,28 @@ export const AgencyBox = styled.div`
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
     .lt-image {
-      width: 100%;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
       img {
         width: 100%;
         height: initial;
+        &.content {
+          width: initial;
+          height: 100%;
+          max-width: initial;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: 0;
+          transform: translate(-50%, -50%);
+        }
         &.preload {
-          width: 104%;
-          height: initial;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: initial;
+          max-width: initial;
+          position: absolute;
         }
       }
     }
