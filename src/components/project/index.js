@@ -16,8 +16,7 @@ import {
   Logo,
   ViewMore,
   Buttom,
-  NextProjectLink,
-  ProjectLink
+  NextProjectLink
 } from "./style";
 
 export default class Project extends Component {
