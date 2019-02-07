@@ -7,7 +7,6 @@ import { Outline, Solid, Invisibile } from "./style";
 
 const nexPage = props => {
   nprogress.start();
-  console.tron.log(props);
   setTimeout(() => {
     document.body.classList.add("loading");
   }, 200);
@@ -30,7 +29,6 @@ export class OutlineButtom extends Component {
 
   loadNexPage = () => {
     nprogress.start();
-
     nexPage(this.props);
   };
 
