@@ -57,7 +57,7 @@ export default class Project extends Component {
 
   render() {
     const { history } = this.props;
-    console.tron.log(this.props);
+
     const projectClass = classNames(
       this.props.className,
       this.state.isOpen ? "open" : "",
