@@ -27,7 +27,15 @@ body{
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
 }
+main{
+  transition:all 1s;
+}
 
+.loading{
+  main{
+    opacity:0;
+  }
+}
 .lt-image {
   position: relative;
   overflow: hidden;

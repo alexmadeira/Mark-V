@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-
 import { Creators as ProjectsAtions } from "../../../store/ducks/projects";
 
 import PropTypes from "prop-types";
@@ -25,6 +24,8 @@ class Projects extends Component {
   }
 
   render() {
+    const { history } = this.props;
+
     return (
       <Container className={!this.props.simple && "respiro"}>
         <Row>
@@ -33,6 +34,7 @@ class Projects extends Component {
               key={project.id}
               item={i}
               project={project}
+              history={history}
               simple={this.props.simple}
             />
           ))}

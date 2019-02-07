@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +13,7 @@ export const Container = styled.div`
   position: absolute;
 `;
 
-export const Arrow = styled(Link)`
+export const Arrow = styled.a`
   display: inline-block;
   color: #fff;
   font-size: 1.25em;
@@ -23,6 +22,7 @@ export const Arrow = styled(Link)`
   position: relative;
   transition: all 0.2s;
   padding: 5px 0;
+  cursor: pointer;
 
   .the-arrow {
     width: 64px;

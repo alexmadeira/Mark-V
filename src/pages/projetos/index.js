@@ -3,10 +3,10 @@ import Projects from "../../components/lists/projetcs";
 import Back from "../../components/block/back";
 import { Main } from "./style";
 
-const Projetos = () => (
+const Projetos = ({ history }) => (
   <Main>
-    <Back to="/" text="Home" />
-    <Projects simple={false} order="ASC" />
+    <Back to="/" text="Home" history={history} />
+    <Projects simple={false} history={history} order="ASC" />
   </Main>
 );
 

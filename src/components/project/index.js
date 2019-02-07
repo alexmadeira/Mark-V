@@ -3,6 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 import Image from "../block/image";
+import { SolidButtom, InvisibileButtom } from "../../components/buttons";
 import {
   Container,
   Preview,
@@ -15,7 +16,6 @@ import {
   Logo,
   ViewMore,
   Buttom,
-  ButtomLink,
   NextProjectLink,
   ProjectLink
 } from "./style";
@@ -56,6 +56,8 @@ export default class Project extends Component {
   };
 
   render() {
+    const { history } = this.props;
+    console.tron.log(this.props);
     const projectClass = classNames(
       this.props.className,
       this.state.isOpen ? "open" : "",
@@ -74,7 +76,10 @@ export default class Project extends Component {
         bgcolor={this.props.project.backgroundColor}
       >
         {this.props.simple && (
-          <ProjectLink to={`/projeto/${this.props.project.slug}`} />
+          <InvisibileButtom
+            to={`/projeto/${this.props.project.slug}`}
+            history={history}
+          />
         )}
         {this.props.nextProjectLink && (
           <NextProjectLink to={`/projeto/${this.props.project.slug}`}>
@@ -120,9 +125,12 @@ export default class Project extends Component {
             {!this.state.isOpen ? (
               <ViewMore>
                 <Buttom onClick={this.openProject}>Ver</Buttom>
-                <ButtomLink to={`/projeto/${this.props.project.slug}`}>
+                <SolidButtom
+                  to={`/projeto/${this.props.project.slug}`}
+                  history={history}
+                >
                   Completo
-                </ButtomLink>
+                </SolidButtom>
               </ViewMore>
             ) : (
               <ViewMore>

@@ -20,7 +20,7 @@ const backgroundColor = keyframes`
   }
 `;
 
-export const Main = styled.div`
+export const Main = styled.main`
   background: ${props =>
     props.backgroundColor ? props.backgroundColor : "#fff"};
   animation: ${backgroundColor} 1.5s;

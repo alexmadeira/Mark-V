@@ -2,21 +2,23 @@ import React from "react";
 import Banner from "../../components/banner";
 import Projects from "../../components/lists/projetcs";
 import Basic from "../../components/block/basic";
-import Buttom from "../../components/buttons/outline";
+import { OutlineButtom } from "../../components/buttons";
 
 import "../../styles/global";
 import { Main, Inclina, Center, A, FigureBox } from "./style";
 
-const Home = () => (
+const Home = ({ history }) => (
   <Main>
     <Banner />
     <Inclina>
-      <Projects limit={6} order="asc" simple={true} />
+      <Projects limit={6} order="asc" history={history} simple={true} />
       <Basic reverse={true} shadow={false}>
         <h3>Quer saber mais? </h3>
         <p>Dê uma olhadinha nos projetos que participei</p>
         <Center>
-          <Buttom to="/projetos">Projetos</Buttom>
+          <OutlineButtom to="/projetos" history={history} type="">
+            Projetos
+          </OutlineButtom>
           <A
             href="https://trampos.co/alexmadeira"
             target="_blank"

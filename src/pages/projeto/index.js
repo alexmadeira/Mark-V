@@ -29,6 +29,7 @@ import {
 
 class Projeto extends Component {
   static propTypes = {
+    loading: PropTypes.bool,
     project: PropTypes.shape({
       name: PropTypes.string,
       longDescription: PropTypes.string,
@@ -89,15 +90,15 @@ class Projeto extends Component {
 
   componentDidMount() {
     this.requestProject();
-    this.props.history.listen((location, action) => {
-      window.location.reload();
-    });
   }
 
   render() {
+    const { history } = this.props;
+    if (this.props.loading) return null;
+
     return (
       <Main backgroundColor={this.props.project.backgroundColor}>
-        <Back to={"/projetos"} text="Projetos" />
+        <Back to={"/projetos"} text="Projetos" history={history} />
         {this.props.project.id && (
           <MainContent
             project={this.props.project}

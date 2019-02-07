@@ -9,15 +9,13 @@ class FancyRoute extends React.Component {
   state = {
     hidden: true
   };
-  componentWillMount() {
-    nprogress.start();
-  }
 
   componentDidMount() {
-    var _this = this;
-    setTimeout(function() {
-      _this.setState({ hidden: false });
+    setTimeout(() => {
+      this.setState({ hidden: false });
       nprogress.done();
+
+      document.body.classList.remove("loading");
     }, 200);
   }
 
