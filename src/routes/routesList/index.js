@@ -24,7 +24,7 @@ const routes = [
   },
   {
     title: "Curriculo",
-    path: "/curriculo",
+    path: "/teste",
     exact: true,
     component: Curriculo
   }

@@ -15,11 +15,11 @@ export const Main = styled.main`
 `;
 
 export const Header = styled.header`
-  height: 35vw;
+  height: 40vh;
   background: ${props =>
     props.backgroundImage ? `url(${props.backgroundImage});` : "#000"};
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
   background-position: center 0px;
   position: relative;
   &::before {
@@ -145,7 +145,6 @@ export const Contaniner = styled.div`
   flex: 1;
   & > div {
     opacity: 1;
-    position: absolute;
     left: 0;
     transition: all 0.3s;
     display: flex;
@@ -154,6 +153,7 @@ export const Contaniner = styled.div`
     flex: 1;
     animation: ${entrada} 1s;
     transition-timing-function: cubic-bezier(0.03, 0.74, 0.64, 1.01);
+    padding: 15px;
   }
   &.out {
     & > div {

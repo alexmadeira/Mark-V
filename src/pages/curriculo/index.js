@@ -22,10 +22,10 @@ export default class Curriculo extends Component {
     getOut: false,
     curriculoItem: 0,
     nav: [
-      { id: 0, name: "Geral", component: Geral, active: true },
-      { id: 1, name: "Experiências", component: Experiencia, active: false },
-      { id: 2, name: "Educações", component: Educacao, active: false },
-      { id: 3, name: "habilidades", component: Habilidade, active: false }
+      { id: 0, name: "Teste", component: Geral, active: true },
+      { id: 1, name: "Teste 1", component: Experiencia, active: false },
+      { id: 2, name: "Teste 10", component: Educacao, active: false },
+      { id: 3, name: "Teste 100", component: Habilidade, active: false }
     ]
   };
 
@@ -40,8 +40,19 @@ export default class Curriculo extends Component {
     this.setState({ nav, getOut: false });
   };
 
+  isActualItem = atualID => {
+    return !this.state.nav.filter(item => {
+      if (!item.active && item.id === atualID) {
+        return true;
+      }
+    }).length;
+  };
+
   removeContent = id => {
+    if (this.isActualItem(id)) return;
+
     this.setState({ getOut: true });
+
     setTimeout(() => {
       this.activeItem(id);
     }, 250);
@@ -59,7 +70,7 @@ export default class Curriculo extends Component {
 
     return (
       <Main>
-        <Back to="/" history={history} />
+        <Back to="/" history={history} text="Home" />
         <Header backgroundImage="http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
           <HeaderBox>
             <Nome>Teste</Nome>
