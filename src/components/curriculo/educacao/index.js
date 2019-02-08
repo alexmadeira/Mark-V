@@ -1,13 +1,8 @@
 import React from "react";
-import {} from "./style";
-
+import { Container } from "./style";
 const Educacao = () => (
-  <div>
+  <Container>
     <h1>Educação</h1>
-    <h1>Educação</h1>
-    <h1>Educação</h1>
-    <h1>Educação</h1>
-    <h1>Educação</h1>
-  </div>
+  </Container>
 );
 export default Educacao;

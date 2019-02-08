@@ -1,11 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const Main = styled.div`
+const entrada = keyframes`
+  0% { left: 100vw; opacity: 0; }
+  40% { left: 100vw; }  
+  41% { opacity: 0; }  
+  100% { left: 0px; opacity: 1; }
+`;
+
+export const Main = styled.main`
   background: #ffffff;
-  opacity: 0;
-  &.loaded {
-    opacity: 1;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 `;
 
 export const Header = styled.header`
@@ -42,6 +48,7 @@ export const HeaderBox = styled.div`
   z-index: 2;
   position: relative;
 `;
+
 export const Nome = styled.h1`
   font-size: 70px;
   color: #fff;
@@ -58,6 +65,7 @@ export const Sobre = styled.p`
   line-height: 30px;
   font-family: "PT Sans Narrow", sans-serif;
 `;
+
 export const NavBox = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -67,6 +75,7 @@ export const NavBox = styled.div`
   position: relative;
   z-index: 2;
 `;
+
 export const Nav = styled.ul`
   list-style: none;
   background-color: #22262a;
@@ -76,6 +85,11 @@ export const Nav = styled.ul`
   li {
     border-right: 1px solid #4a4a4a;
     position: relative;
+    overflow: hidden;
+
+    &:last-child {
+      border-right: 0;
+    }
     &::before {
       content: "";
       background: #f00;
@@ -83,10 +97,9 @@ export const Nav = styled.ul`
       position: absolute;
       height: 5px;
       width: 0;
+      z-index: 3;
     }
-    &:last-child {
-      border-right: 0;
-    }
+
     &.active {
       a {
         color: #fff;
@@ -103,23 +116,50 @@ export const Nav = styled.ul`
       align-items: center;
       text-transform: capitalize;
       cursor: pointer;
+
+      &::after {
+        content: "";
+        background: rgba(255, 0, 0, 0.3);
+        transition: width 0.2s ease;
+        position: absolute;
+        height: 5px;
+        width: 0;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
       &:hover {
         color: #fff;
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
 `;
 
-export const ContaninerAnimate = styled.div`
+export const Contaniner = styled.div`
   position: relative;
-  overflow: hidden;
   display: flex;
-`;
-export const ContaninerAnimateBox = styled.div`
-  position: relative;
-  left: ${props => (props.left ? `${props.left}vw` : 0)};
-  top: 0;
-  transition: all 0.3s linear;
-  display: flex;
-  min-width: 100vw;
+  flex: 1;
+  & > div {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+    display: flex;
+    min-width: 100vw;
+    height: 100%;
+    flex: 1;
+    animation: ${entrada} 1s;
+    transition-timing-function: cubic-bezier(0.03, 0.74, 0.64, 1.01);
+  }
+  &.out {
+    & > div {
+      transition: all 200ms;
+      left: -100vw;
+      opacity: 0;
+    }
+  }
 `;

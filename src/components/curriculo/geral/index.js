@@ -1,5 +1,9 @@
 import React from "react";
-import {} from "./style";
+import { Container } from "./style";
 
-const Geral = () => <h1>Geral</h1>;
+const Geral = () => (
+  <Container>
+    <h1>Geral</h1>
+  </Container>
+);
 export default Geral;

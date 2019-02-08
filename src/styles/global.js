@@ -27,6 +27,7 @@ body{
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
 }
+
 main{
   transition:all 1s;
 }

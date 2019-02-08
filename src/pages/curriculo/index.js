@@ -8,8 +8,7 @@ import {
   Sobre,
   Nav,
   NavBox,
-  ContaninerAnimate,
-  ContaninerAnimateBox
+  Contaniner
 } from "./style";
 
 import Geral from "../../components/curriculo/geral";
@@ -20,7 +19,7 @@ import Habilidade from "../../components/curriculo/habilidade";
 export default class Curriculo extends Component {
   state = {
     loaded: false,
-    show: false,
+    getOut: false,
     curriculoItem: 0,
     nav: [
       { id: 0, name: "Geral", component: Geral, active: true },
@@ -30,33 +29,40 @@ export default class Curriculo extends Component {
     ]
   };
 
-  activeItem = item => {
-    let nav = [
-      { id: 0, name: "Geral", active: false },
-      { id: 1, name: "Experiências", active: false },
-      { id: 2, name: "Educações", active: false },
-      { id: 3, name: "habilidades", active: false }
-    ];
-
-    nav[item].active = true;
-    this.setState({ ...this.state, nav, curriculoItem: -item });
+  activeItem = id => {
+    const nav = this.state.nav.filter(item => {
+      item.active = false;
+      if (item.id === id) {
+        item.active = true;
+      }
+      return item;
+    });
+    this.setState({ nav, getOut: false });
   };
 
-  componentDidMount() {
-    this.setState({ loaded: true });
-    this.timeoutId = setTimeout(() => {
-      this.setState({ ...this.state, show: true });
-    }, 200);
-  }
+  removeContent = id => {
+    this.setState({ getOut: true });
+    setTimeout(() => {
+      this.activeItem(id);
+    }, 250);
+  };
+
+  getContent = () => {
+    return this.state.nav.filter(item => {
+      return item.active;
+    })[0].component;
+  };
 
   render() {
-    if (!this.state.loaded) return null;
+    const { history } = this.props;
+    const Content = this.getContent();
+
     return (
-      <Main className={this.state.show ? "loaded" : ""}>
-        <Back to="/" />
+      <Main>
+        <Back to="/" history={history} />
         <Header backgroundImage="http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
           <HeaderBox>
-            <Nome>Alex Cardoso Madeira</Nome>
+            <Nome>Teste</Nome>
             <Sobre>
               Trained in ways of martial arts at K'un-Lun, Danny Rand becomes
               the Immortal Iron Fist and uses his incredible abilities to defend
@@ -66,27 +72,16 @@ export default class Curriculo extends Component {
         </Header>
         <NavBox>
           <Nav>
-            {this.state.nav.map(({ name, active, id }) => (
+            {this.state.nav.map(({ id, active, name }) => (
               <li className={active ? "active" : ""} key={id}>
-                <a onClick={() => this.activeItem(id)}>{name}</a>
+                <a onClick={() => this.removeContent(id)}>{name}</a>
               </li>
             ))}
           </Nav>
         </NavBox>
-        <ContaninerAnimate>
-          <ContaninerAnimateBox left={this.state.curriculoItem * 100}>
-            <Geral />
-          </ContaninerAnimateBox>
-          <ContaninerAnimateBox left={this.state.curriculoItem * 100}>
-            <Experiencia />
-          </ContaninerAnimateBox>
-          <ContaninerAnimateBox left={this.state.curriculoItem * 100}>
-            <Educacao />
-          </ContaninerAnimateBox>
-          <ContaninerAnimateBox left={this.state.curriculoItem * 100}>
-            <Habilidade />
-          </ContaninerAnimateBox>
-        </ContaninerAnimate>
+        <Contaniner className={this.state.getOut && "out"}>
+          <Content />
+        </Contaniner>
       </Main>
     );
   }

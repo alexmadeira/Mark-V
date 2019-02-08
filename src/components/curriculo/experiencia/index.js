@@ -3,11 +3,7 @@ import { Container, Empresa } from "./style";
 
 const Experiencia = () => (
   <Container>
-    <Empresa>Emprexa1</Empresa>
-    <Empresa>Emprexa1</Empresa>
-    <Empresa>Emprexa1</Empresa>
-    <Empresa>Emprexa1</Empresa>
-    <Empresa>Emprexa1</Empresa>
+    <h1>Experiencia</h1>
   </Container>
 );
 export default Experiencia;
