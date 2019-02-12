@@ -25,7 +25,7 @@ export default class Project extends Component {
     isOpen: false,
   };
 
-  static propTypes = {
+  propTypes = {
     simple: PropTypes.bool.isRequired,
     history: PropTypes.shape().isRequired,
     item: PropTypes.number,

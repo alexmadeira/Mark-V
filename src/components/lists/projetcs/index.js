@@ -9,7 +9,7 @@ import Project from '../../project';
 import { Container, Row } from './style';
 
 class Projects extends Component {
-  static propTypes = {
+  propTypes = {
     loading: PropTypes.bool.isRequired,
     limit: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     order: PropTypes.string.isRequired,
