@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ export const TitleBox = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
   font-size: 30px;
   margin: 0;
   color: #000;

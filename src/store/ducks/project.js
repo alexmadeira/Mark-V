@@ -1,11 +1,11 @@
 export const Types = {
-  GET_REQUEST: "project/GET_REQUEST",
-  GET_SUCCESS: "project/GET_SUCCESS"
+  GET_REQUEST: 'project/GET_REQUEST',
+  GET_SUCCESS: 'project/GET_SUCCESS',
 };
 
 const INITIAL_STATE = {
   data: {},
-  loading: false
+  loading: false,
 };
 
 export default function project(state = INITIAL_STATE, action) {
@@ -23,6 +23,6 @@ export const Creators = {
   getProjectRequest: slug => ({ type: Types.GET_REQUEST, payload: { slug } }),
   getProjectSucess: data => ({
     type: Types.GET_SUCCESS,
-    payload: { data }
-  })
+    payload: { data },
+  }),
 };

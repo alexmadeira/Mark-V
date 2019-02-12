@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import Image from "../block/image";
-import { SolidButtom, InvisibileButtom } from "../../components/buttons";
+import Image from '../block/image';
+import Buttom from '../buttons';
+
 import {
   Container,
   Preview,
@@ -15,18 +16,21 @@ import {
   LogoLink,
   Logo,
   ViewMore,
-  Buttom,
-  NextProjectLink
-} from "./style";
+  ButtomMore,
+  NextProjectLink,
+} from './style';
 
 export default class Project extends Component {
   state = {
     isOpen: false,
-    loading: true
   };
 
   static propTypes = {
     simple: PropTypes.bool.isRequired,
+    history: PropTypes.shape().isRequired,
+    item: PropTypes.number,
+    className: PropTypes.string,
+    nextProjectLink: PropTypes.bool,
     project: PropTypes.shape({
       id: PropTypes.number.isRequired,
       slug: PropTypes.string.isRequired,
@@ -37,118 +41,117 @@ export default class Project extends Component {
       previewColor: PropTypes.string.isRequired,
       logo: PropTypes.shape({
         url: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
+        name: PropTypes.string.isRequired,
       }).isRequired,
       background: PropTypes.shape({
-        url: PropTypes.string.isRequired
+        url: PropTypes.string.isRequired,
       }).isRequired,
       preview: PropTypes.shape({
         url: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        thumb: PropTypes.string.isRequired
-      }).isRequired
-    })
+        thumb: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
-  openProject = e => {
-    this.setState({ isOpen: !this.state.isOpen });
+  static defaultProps = {
+    className: '',
+    nextProjectLink: false,
+    item: 0,
+  };
+
+  openProject = () => {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
   };
 
   render() {
-    const { history } = this.props;
+    const {
+      history,
+      className,
+      simple,
+      nextProjectLink,
+      project: {
+        slug,
+        background,
+        backgroundColor,
+        preview,
+        logo,
+        name,
+        previewColor,
+        description,
+        longDescription,
+      },
+      item,
+    } = this.props;
 
-    const projectClass = classNames(
-      this.props.className,
-      this.state.isOpen ? "open" : "",
-      this.props.simple ? "simple" : ""
-    );
+    const { isOpen } = this.state;
+
+    const projectClass = classNames(className, isOpen ? 'open' : '', simple ? 'simple' : '');
 
     return (
       <Container
-        name={this.props.project.slug}
+        name={slug}
         className={projectClass}
-        item={this.props.item}
-        ref={Container => {
-          this.projectItem = Container;
-        }}
-        bgimage={this.props.project.background.url}
-        bgcolor={this.props.project.backgroundColor}
+        item={item}
+        bgimage={background.url}
+        bgcolor={backgroundColor}
       >
-        {this.props.simple && (
-          <InvisibileButtom
-            to={`/projeto/${this.props.project.slug}`}
-            history={history}
-          />
+        {simple && <Buttom to={`/projeto/${slug}`} history={history} type="invisibile" />}
+        {nextProjectLink && (
+          <Buttom to={`/projeto/${slug}`} history={history} type="invisibile">
+            <NextProjectLink>
+              <img src={preview.thumb} alt={name} />
+              <Logo className="logo">
+                <img src={logo.url} alt={logo.name} />
+              </Logo>
+              <span>Próximo projeto</span>
+            </NextProjectLink>
+          </Buttom>
         )}
-        {this.props.nextProjectLink && (
-          <NextProjectLink to={`/projeto/${this.props.project.slug}`}>
-            <img
-              src={this.props.project.preview.thumb}
-              alt={this.props.project.name}
-            />
-            <Logo className="logo">
-              <img
-                src={this.props.project.logo.url}
-                alt={this.props.project.logo.name}
-              />
-            </Logo>
-            <span>Próximo projeto</span>
-          </NextProjectLink>
-        )}
-        <Preview
-          className={this.state.isOpen ? "open" : ""}
-          backgroundColor={this.props.project.previewColor}
-        >
+        <Preview className={isOpen ? 'open' : ''} backgroundColor={previewColor}>
           <Image
             src={{
-              preload: this.props.project.preview.thumb,
-              content: this.props.project.preview.url
+              preload: preview.thumb,
+              content: preview.url,
             }}
           />
         </Preview>
-        <Logo className={this.state.isOpen ? "open" : ""}>
-          <LogoLink to={`/projeto/${this.props.project.slug}`}>
-            <img
-              src={this.props.project.logo.url}
-              alt={this.props.project.logo.name}
-            />
-          </LogoLink>
-        </Logo>
-        {!this.props.nextProjectLink && (
-          <TitleBox className={this.state.isOpen ? "open" : ""}>
-            <Title>{this.props.project.name}</Title>
+        {!nextProjectLink && (
+          <Logo className={isOpen ? 'open' : ''}>
+            <LogoLink to={`/projeto/${slug}`}>
+              <img src={logo.url} alt={logo.name} />
+            </LogoLink>
+          </Logo>
+        )}
+        {!nextProjectLink && (
+          <TitleBox className={isOpen ? 'open' : ''}>
+            <Title>{name}</Title>
           </TitleBox>
         )}
-        {!this.props.simple && (
+        {!simple && (
           <Fragment>
-            {!this.state.isOpen ? (
+            {!isOpen ? (
               <ViewMore>
-                <Buttom onClick={this.openProject}>Ver</Buttom>
-                <SolidButtom
-                  to={`/projeto/${this.props.project.slug}`}
-                  history={history}
-                >
+                <ButtomMore onClick={this.openProject}>Ver</ButtomMore>
+                <Buttom to={`/projeto/${slug}`} history={history} type="solid">
                   Completo
-                </SolidButtom>
+                </Buttom>
               </ViewMore>
             ) : (
               <ViewMore>
-                <Buttom onClick={this.openProject}>Fechar</Buttom>
+                <ButtomMore onClick={this.openProject}>Fechar</ButtomMore>
               </ViewMore>
             )}
           </Fragment>
         )}
-        {!this.props.nextProjectLink && (
-          <DescriptionBox
-            className={
-              this.state.isOpen ? "open DescriptionBox" : "DescriptionBox"
-            }
-          >
-            <Description>{this.props.project.description}</Description>
+        {!nextProjectLink && (
+          <DescriptionBox className={isOpen ? 'open DescriptionBox' : 'DescriptionBox'}>
+            <Description>{description}</Description>
           </DescriptionBox>
         )}
-        <BigDescriptionBox className={this.state.isOpen ? "open" : ""}>
-          <p>{this.props.project.longDescription}</p>
+        <BigDescriptionBox className={isOpen ? 'open' : ''}>
+          <p>{longDescription}</p>
         </BigDescriptionBox>
       </Container>
     );

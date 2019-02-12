@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -13,7 +13,16 @@ export const Container = styled.div`
   position: absolute;
 `;
 
-export const Arrow = styled.a`
+export const ArrowBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    position: relative;
+  }
+`;
+
+export const Arrow = styled.span`
   display: inline-block;
   color: #fff;
   font-size: 1.25em;
@@ -83,7 +92,7 @@ export const Arrow = styled.a`
   .the-arrow > .shaft:before,
   .the-arrow > .shaft:after {
     background-color: #fff;
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     position: absolute;

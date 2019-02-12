@@ -1,94 +1,79 @@
-import React, { Component } from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
-import nprogress from "nprogress";
+import PropTypes from 'prop-types';
+import nprogress from 'nprogress';
 
-import { Outline, Solid, Invisibile } from "./style";
+import SolidButtom from './buttomStyles/solid';
+import InvisibileButtom from './buttomStyles/invisibile';
+import OutlineButtom from './buttomStyles/outline';
 
-const nexPage = props => {
+const nexPage = ({ history, to }) => {
   nprogress.start();
+  document.body.classList.remove('loadded');
   setTimeout(() => {
-    document.body.classList.add("loading");
-  }, 200);
-  setTimeout(() => {
-    props.history.push(props.to);
+    history.push(to);
+    history.go();
   }, 2000);
 };
 
-export class OutlineButtom extends Component {
-  static defaultProps = {
-    to: "#",
-    className: "btn-default"
-  };
-
-  static propTypes = {
-    to: PropTypes.string,
-    key: PropTypes.string,
-    className: PropTypes.string
-  };
-
-  loadNexPage = () => {
-    nprogress.start();
-    nexPage(this.props);
-  };
-
-  render() {
-    return (
-      <Outline onClick={this.loadNexPage} className={this.props.className}>
-        {this.props.children}
-      </Outline>
-    );
+const Buttons = ({
+  type, className, children, history, to,
+}) => {
+  switch (type) {
+    case 'solid':
+      return (
+        <SolidButtom
+          className={className}
+          content={children}
+          loadNexPage={() => {
+            nexPage({ history, to });
+          }}
+        />
+      );
+    case 'invisibile':
+      return (
+        <InvisibileButtom
+          className={className}
+          content={children}
+          loadNexPage={() => {
+            nexPage({ history, to });
+          }}
+        />
+      );
+    case 'outline':
+      return (
+        <OutlineButtom
+          className={className}
+          content={children}
+          loadNexPage={() => {
+            nexPage({ history, to });
+          }}
+        />
+      );
+    default:
+      return (
+        <SolidButtom
+          className={className}
+          content={children}
+          loadNexPage={() => {
+            nexPage({ history, to });
+          }}
+        />
+      );
   }
-}
+};
 
-export class SolidButtom extends Component {
-  static defaultProps = {
-    to: "#",
-    className: "btn-default"
-  };
+Buttons.propTypes = {
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
+  to: PropTypes.string.isRequired,
+  history: PropTypes.shape().isRequired,
+};
 
-  static propTypes = {
-    to: PropTypes.string,
-    key: PropTypes.string,
-    className: PropTypes.string
-  };
+Buttons.defaultProps = {
+  className: 'btn-default',
+  children: '',
+};
 
-  loadNexPage = () => {
-    nprogress.start();
-    nexPage(this.props);
-  };
-
-  render() {
-    return (
-      <Solid onClick={this.loadNexPage} className={this.props.className}>
-        {this.props.children}
-      </Solid>
-    );
-  }
-}
-
-export class InvisibileButtom extends Component {
-  static defaultProps = {
-    to: "#",
-    className: "btn-default"
-  };
-
-  static propTypes = {
-    to: PropTypes.string,
-    key: PropTypes.string,
-    className: PropTypes.string
-  };
-
-  loadNexPage = () => {
-    nprogress.start();
-    nexPage(this.props);
-  };
-
-  render() {
-    return (
-      <Invisibile onClick={this.loadNexPage} className={this.props.className}>
-        {this.props.children}
-      </Invisibile>
-    );
-  }
-}
+export default Buttons;

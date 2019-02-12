@@ -1,4 +1,4 @@
-import { injectGlobal, keyframes } from "styled-components";
+import { injectGlobal, keyframes } from 'styled-components';
 
 const fade = keyframes`
 0% { opacity: 0; }
@@ -15,10 +15,17 @@ injectGlobal`
 
 html,body,#root{
   height:100vh;
-  overflow-x: hidden; background: #fff;
+  overflow-x: hidden;
+}
+#root{
+    transition:opacity 1s;
 }
 
-html {}
+.loadded{
+  #root{
+    opacity:1!important;
+  }
+}
 
 body{
   text-rendering:optimizeLegibility!important;
@@ -28,39 +35,33 @@ body{
   font-size: 16px;
 }
 
-main{
-  transition:all 1s;
-}
-
-.loading{
-  main{
-    opacity:0;
-  }
-}
 .lt-image {
   position: relative;
   overflow: hidden;
   img {
     min-height: 100%;
+    position: relative;
     display:block;
-    transition: opacity 1s;
-    animation: ${fade} 5s;
+    transform: translate(-50%,0);
     &.preload {
       display: block;
       position: absolute;
       top: -2%;
-      left: -2%;
-      
+      left: 50%;
       height: 104%!important;
       z-index: 2;
       animation: ${fade} 50ms;
       filter: blur(10px);
+    }
+    &.content{
+      left: 50%;
     }
   }
   &._loaded {
     img {
       &.preload {
         opacity: 0;
+        position:absolute
       }
     }
   }

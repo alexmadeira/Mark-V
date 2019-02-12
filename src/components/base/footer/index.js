@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Social, Paragrafo } from "./style";
+import { Container, Social, Paragrafo } from './style';
+
 const Footer = () => (
   <Container>
     <Paragrafo>
-      © 2016 - 2018 Portfólio Alex Madeira. Feito pela mão direita de um canhoto
-      :)
+      © 2016 - 2018 Portfólio Alex Madeira. Feito pela mão direita de um canhoto :)
     </Paragrafo>
     <Social>
       <li>

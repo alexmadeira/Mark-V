@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Empresa } from "./style";
+import React from 'react';
+import { Container } from './style';
 
 const Experiencia = () => (
   <Container>

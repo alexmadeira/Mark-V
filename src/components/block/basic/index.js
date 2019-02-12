@@ -1,31 +1,26 @@
-import React, { Component } from "react";
+import React from 'react';
 
-import { Container } from "./style";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import { Container } from './style';
 
-class Basic extends Component {
-  static defaultProps = {
-    regular: false,
-    reverse: false,
-    shadow: true
-  };
+const Basic = ({
+  regular, reverse, shadow, children,
+}) => (
+  <Container regular={regular} reverse={reverse} shadow={shadow}>
+    {children}
+  </Container>
+);
 
-  static propTypes = {
-    regular: PropTypes.bool,
-    reverse: PropTypes.bool,
-    shadow: PropTypes.bool
-  };
-  render() {
-    return (
-      <Container
-        regular={this.props.regular}
-        reverse={this.props.reverse}
-        shadow={this.props.shadow}
-      >
-        {this.props.children}
-      </Container>
-    );
-  }
-}
+Basic.defaultProps = {
+  regular: false,
+  reverse: false,
+  shadow: true,
+};
+Basic.propTypes = {
+  regular: PropTypes.bool,
+  reverse: PropTypes.bool,
+  shadow: PropTypes.bool,
+  children: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
 
 export default Basic;

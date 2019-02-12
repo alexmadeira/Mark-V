@@ -1,7 +1,9 @@
-import React from "react";
-import Projects from "../../components/lists/projetcs";
-import Back from "../../components/block/back";
-import { Main } from "./style";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import Projects from '../../components/lists/projetcs';
+import Back from '../../components/block/back';
+import { Main } from './style';
 
 const Projetos = ({ history }) => (
   <Main>
@@ -9,5 +11,9 @@ const Projetos = ({ history }) => (
     <Projects simple={false} history={history} order="ASC" />
   </Main>
 );
+
+Projetos.propTypes = {
+  history: PropTypes.shape().isRequired,
+};
 
 export default Projetos;

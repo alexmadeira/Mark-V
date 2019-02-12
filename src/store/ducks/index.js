@@ -1,9 +1,9 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import projects from "./projects";
-import project from "./project";
+import projects from './projects';
+import project from './project';
 
 export default combineReducers({
   projects,
-  project
+  project,
 });

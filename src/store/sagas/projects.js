@@ -1,6 +1,6 @@
-import { call, put } from "redux-saga/effects";
-import api from "../../services/api";
-import { Creators as ProjectsActions } from "../ducks/projects";
+import { call, put } from 'redux-saga/effects';
+import api from '../../services/api';
+import { Creators as ProjectsActions } from '../ducks/projects';
 
 export function* getProjects(action) {
   try {

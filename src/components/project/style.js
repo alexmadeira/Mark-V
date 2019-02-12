@@ -1,10 +1,10 @@
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const entrada = keyframes`
   0% { top: 200px; opacity: 0; }
-  40% { top: 200px; }  
-  50% { opacity: 0; }  
+  40% { top: 200px; }
+  50% { opacity: 0; }
   100% { top: 0px; opacity: 1; }
 `;
 
@@ -24,10 +24,10 @@ export const Container = styled.div`
   background-size: cover;
   opacity: 1;
   animation: ${entrada} ${props => (props.item ? 1 + props.item / 5 : 1)}s;
-  background: ${props => (props.bgcolor ? `url(${props.bgcolor})` : "#FFFFFF")};
+  background: ${props => (props.bgcolor ? `url(${props.bgcolor})` : '#FFFFFF')};
 
   &::after {
-    content: "";
+    content: '';
     background-image: url(${props => props.bgimage});
     visibility: hidden;
     top: 0;
@@ -93,7 +93,7 @@ export const Container = styled.div`
   }
 `;
 
-export const NextProjectLink = styled(Link)`
+export const NextProjectLink = styled.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -116,7 +116,7 @@ export const NextProjectLink = styled(Link)`
   justify-content: center;
   align-items: center;
   &::before {
-    content: "";
+    content: '';
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     width: 100%;
@@ -186,7 +186,7 @@ export const Preview = styled.div`
     }
   }
 
-  ${props => (props.bgcolor ? `background-color:${props.bgcolor};` : "")};
+  ${props => (props.bgcolor ? `background-color:${props.bgcolor};` : '')};
   &.open {
     opacity: 0;
   }
@@ -220,7 +220,7 @@ export const TitleBox = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
   font-size: 30px;
   margin: 0;
   color: #000;
@@ -282,7 +282,7 @@ export const BigDescriptionBox = styled.div`
 `;
 
 export const Description = styled.h3`
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Architects Daughter', cursive;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -355,7 +355,7 @@ export const ViewMore = styled.div`
   }
 `;
 
-export const Buttom = styled.button`
+export const ButtomMore = styled.button`
   text-decoration: none;
   display: inline-block;
   margin-bottom: 0;

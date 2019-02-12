@@ -1,42 +1,34 @@
-import React, { Component } from "react";
-import nprogress from "nprogress";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Container, Arrow } from "./style";
+import Buttom from '../../buttons';
 
-class Back extends Component {
-  loadNexPage = () => {
-    nprogress.start();
+import { Container, Arrow, ArrowBox } from './style';
 
-    setTimeout(() => {
-      document.body.classList.add("loading");
-    }, 200);
-
-    setTimeout(() => {
-      this.props.history.push(this.props.to);
-    }, 2000);
-  };
-
-  render() {
-    const { text } = this.props;
-
-    return (
-      <Container>
-        <p>
-          <Arrow onClick={this.loadNexPage} className="animated-arrow">
-            <span className="the-arrow -left">
+const Back = ({ text, to, history }) => (
+  <Container>
+    <ArrowBox>
+      <Buttom to={to} history={history} type="invisibile">
+        <Arrow className="animated-arrow">
+          <span className="the-arrow -left">
+            <span className="shaft" />
+          </span>
+          <span className="main">
+            <span className="text">{text || 'Voltar'}</span>
+            <span className="the-arrow -right">
               <span className="shaft" />
             </span>
-            <span className="main">
-              <span className="text">{text ? text : "Voltar"}</span>
-              <span className="the-arrow -right">
-                <span className="shaft" />
-              </span>
-            </span>
-          </Arrow>
-        </p>
-      </Container>
-    );
-  }
-}
+          </span>
+        </Arrow>
+      </Buttom>
+    </ArrowBox>
+  </Container>
+);
+
+Back.propTypes = {
+  text: PropTypes.string.isRequired,
+  history: PropTypes.shape().isRequired,
+  to: PropTypes.string.isRequired,
+};
 
 export default Back;

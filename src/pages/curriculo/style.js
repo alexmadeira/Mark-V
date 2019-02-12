@@ -1,9 +1,9 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const entrada = keyframes`
   0% { left: 100vw; opacity: 0; }
-  40% { left: 100vw; }  
-  41% { opacity: 0; }  
+  40% { left: 100vw; }
+  41% { opacity: 0; }
   100% { left: 0px; opacity: 1; }
 `;
 
@@ -12,23 +12,19 @@ export const Main = styled.main`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  position: relative;
 `;
 
 export const Header = styled.header`
   height: 40vh;
-  background: ${props =>
-    props.backgroundImage ? `url(${props.backgroundImage});` : "#000"};
+  background: ${props => (props.backgroundImage ? `url(${props.backgroundImage});` : '#000')};
   background-attachment: fixed;
   background-size: cover;
   background-position: center 0px;
   position: relative;
   &::before {
-    content: "";
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0) 60%
-    );
+    content: '';
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -54,7 +50,7 @@ export const Nome = styled.h1`
   color: #fff;
   -webkit-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
   line-height: 70px;
   margin-bottom: 20px;
 `;
@@ -63,7 +59,7 @@ export const Sobre = styled.p`
   color: #fff;
   font-size: 22px;
   line-height: 30px;
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
 `;
 
 export const NavBox = styled.div`
@@ -91,7 +87,7 @@ export const Nav = styled.ul`
       border-right: 0;
     }
     &::before {
-      content: "";
+      content: '';
       background: #f00;
       transition: width 0.2s ease;
       position: absolute;
@@ -118,7 +114,7 @@ export const Nav = styled.ul`
       cursor: pointer;
 
       &::after {
-        content: "";
+        content: '';
         background: rgba(255, 0, 0, 0.3);
         transition: width 0.2s ease;
         position: absolute;

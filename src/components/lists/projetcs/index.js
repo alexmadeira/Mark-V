@@ -1,41 +1,51 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { Creators as ProjectsAtions } from "../../../store/ducks/projects";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { Creators as ProjectsAtions } from '../../../store/ducks/projects';
 
-import PropTypes from "prop-types";
-import Project from "../../project";
+import Project from '../../project';
 
-import { Container, Row } from "./style";
+import { Container, Row } from './style';
 
 class Projects extends Component {
   static propTypes = {
-    limit: PropTypes.number,
+    loading: PropTypes.bool.isRequired,
+    limit: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    order: PropTypes.string.isRequired,
     simple: PropTypes.bool.isRequired,
     getProjectsRequest: PropTypes.func.isRequired,
-    project: PropTypes.shape({
-      data: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number }))
-    })
+    projects: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    history: PropTypes.shape().isRequired,
+  };
+
+  static defaultProps = {
+    limit: '',
   };
 
   componentDidMount() {
-    const filter = `limit=${this.props.limit}&order=${this.props.order}`;
-    this.props.getProjectsRequest(filter);
+    const { limit, order, getProjectsRequest } = this.props;
+    const filter = `limit=${limit}&order=${order}`;
+    getProjectsRequest(filter);
   }
 
   render() {
-    const { history } = this.props;
+    const {
+      history, simple, projects, loading,
+    } = this.props;
+
+    if (loading) return null;
 
     return (
-      <Container className={!this.props.simple && "respiro"}>
+      <Container className={!simple && 'respiro'}>
         <Row>
-          {this.props.projects.data.map((project, i) => (
+          {projects.map((project, i) => (
             <Project
               key={project.id}
               item={i}
               project={project}
               history={history}
-              simple={this.props.simple}
+              simple={simple}
             />
           ))}
         </Row>
@@ -45,13 +55,13 @@ class Projects extends Component {
 }
 
 const mapStateToProps = state => ({
-  projects: state.projects
+  projects: state.projects.data,
+  loading: state.projects.loading,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(ProjectsAtions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(ProjectsAtions, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Projects);

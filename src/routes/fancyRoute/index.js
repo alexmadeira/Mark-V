@@ -1,26 +1,27 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import nprogress from "nprogress";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import nprogress from 'nprogress';
 
-import { Contaniner } from "./style";
-import "nprogress/nprogress.css";
+import { Contaniner } from './style';
+import 'nprogress/nprogress.css';
 
 class FancyRoute extends React.Component {
   state = {
-    hidden: true
+    hidden: true,
   };
 
   componentDidMount() {
+    this.setState({ hidden: false });
     setTimeout(() => {
-      this.setState({ hidden: false });
       nprogress.done();
 
-      document.body.classList.remove("loading");
-    }, 200);
+      document.body.classList.add('loadded');
+    }, 1200);
   }
 
   render() {
-    if (this.state.hidden) return <Contaniner />;
+    const { hidden } = this.state;
+    if (hidden) return <Contaniner />;
 
     return (
       <Contaniner>
