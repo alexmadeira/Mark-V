@@ -1,7 +1,6 @@
-import Home from "../../pages/home";
 import Projects from "../../pages/projetos";
 import Project from "../../pages/projeto";
-import Curriculo from "../../pages/curriculo";
+import Home from "../../pages/home";
 
 const routes = [
   {
@@ -21,12 +20,6 @@ const routes = [
     path: "/projeto/:slug",
     exact: true,
     component: Project
-  },
-  {
-    title: "Curriculo",
-    path: "/teste",
-    exact: true,
-    component: Curriculo
   }
 ];
 
