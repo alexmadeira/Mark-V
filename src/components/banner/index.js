@@ -1,7 +1,7 @@
-import React from "react";
-import ParallaxMousemove from "react-parallax-mousemove";
+import React from 'react';
+import ParallaxMousemove from 'react-parallax-mousemove';
 
-import { Container, Link, ImageFull } from "./style";
+import { Container, Link, ImageFull } from './style';
 
 const Banner = () => (
   <Container>
@@ -16,12 +16,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0,
-            yFactor: 0
+            yFactor: 0,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-10%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-10%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/7.png" />
@@ -29,12 +29,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.01,
-            yFactor: 0.01
+            yFactor: 0.01,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-10%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-10%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/5.png" />
@@ -43,12 +43,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.02,
-            yFactor: 0.02
+            yFactor: 0.02,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(0,15%)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(0,15%)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/6.png" />
@@ -57,12 +57,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.03,
-            yFactor: 0.03
+            yFactor: 0.03,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-10%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-10%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/4.png" />
@@ -70,12 +70,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.04,
-            yFactor: 0.04
+            yFactor: 0.04,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-10%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-10%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/3.png" />
@@ -83,12 +83,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.05,
-            yFactor: 0.05
+            yFactor: 0.05,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-10%,8%)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-10%,8%)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/2.png" />
@@ -96,12 +96,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.07,
-            yFactor: 0.07
+            yFactor: 0.07,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-5%,5%)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-5%,5%)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/1.png" />
@@ -110,12 +110,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0.08,
-            yFactor: 0.08
+            yFactor: 0.08,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-5%,15%)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-5%,15%)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/alex.png" />
@@ -123,12 +123,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0,
-            yFactor: 0
+            yFactor: 0,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-5%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-5%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/logo.png" />
@@ -136,12 +136,12 @@ const Banner = () => (
         <ParallaxMousemove.Layer
           config={{
             xFactor: 0,
-            yFactor: 0
+            yFactor: 0,
           }}
           layerStyle={{
-            width: 100,
-            position: "absolute",
-            transform: "translate(-5%,0)"
+            width: '100%',
+            position: 'absolute',
+            transform: 'translate(-5%,0)',
           }}
         >
           <ImageFull src="https://s3-sa-east-1.amazonaws.com/alex-madeira/imagens/geral/banner/assinatura_full.png" />
