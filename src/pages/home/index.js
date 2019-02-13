@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Banner from "../../components/banner";
+// import Banner from "../../components/banner";
 import Projects from "../../components/lists/projetcs";
 import Basic from "../../components/block/basic";
 import Buttom from "../../components/buttons";
