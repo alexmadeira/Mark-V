@@ -10,10 +10,10 @@
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-scripts": "2.1.5",
     "react-parallax-mousemove": "^1.1.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
     "scroll-to-element": "^2.0.1",
@@ -26,6 +26,14 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "reactotron-react-js": "^2.1.1",
     "reactotron-redux": "^2.1.0",
     "reactotron-redux-saga": "^2.1.0"
