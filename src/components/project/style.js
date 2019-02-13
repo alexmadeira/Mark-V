@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const entrada = keyframes`
   0% { top: 200px; opacity: 0; }
@@ -293,7 +292,7 @@ export const Description = styled.h3`
   text-overflow: ellipsis;
 `;
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled.span`
   &:hover {
     img {
       filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
@@ -311,6 +310,9 @@ export const Logo = styled.div`
   transition: all 1s;
   transform: rotate(-25deg);
   left: 0px;
+  & > a {
+    position: relative;
+  }
   &.open {
     transform: translate(-50%, -50%) !important;
     left: 50%;

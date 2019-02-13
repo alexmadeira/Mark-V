@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import Image from "../block/image";
-import Buttom from "../buttons";
+import Image from '../block/image';
+import Buttom from '../buttons';
 
 import {
   Container,
@@ -17,12 +17,12 @@ import {
   Logo,
   ViewMore,
   ButtomMore,
-  NextProjectLink
-} from "./style";
+  NextProjectLink,
+} from './style';
 
 export default class Project extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   static propTypes = {
@@ -41,23 +41,23 @@ export default class Project extends Component {
       previewColor: PropTypes.string.isRequired,
       logo: PropTypes.shape({
         url: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
+        name: PropTypes.string.isRequired,
       }).isRequired,
       background: PropTypes.shape({
-        url: PropTypes.string.isRequired
+        url: PropTypes.string.isRequired,
       }).isRequired,
       preview: PropTypes.shape({
         url: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        thumb: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
+        thumb: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   };
 
   static defaultProps = {
-    className: "",
+    className: '',
     nextProjectLink: false,
-    item: 0
+    item: 0,
   };
 
   openProject = () => {
@@ -80,18 +80,14 @@ export default class Project extends Component {
         name,
         previewColor,
         description,
-        longDescription
+        longDescription,
       },
-      item
+      item,
     } = this.props;
 
     const { isOpen } = this.state;
 
-    const projectClass = classNames(
-      className,
-      isOpen ? "open" : "",
-      simple ? "simple" : ""
-    );
+    const projectClass = classNames(className, isOpen ? 'open' : '', simple ? 'simple' : '');
 
     return (
       <Container
@@ -101,9 +97,7 @@ export default class Project extends Component {
         bgimage={background.url}
         bgcolor={backgroundColor}
       >
-        {simple && (
-          <Buttom to={`/projeto/${slug}`} history={history} type="invisibile" />
-        )}
+        {simple && <Buttom to={`/projeto/${slug}`} history={history} type="invisibile" />}
         {nextProjectLink && (
           <Buttom to={`/projeto/${slug}`} history={history} type="invisibile">
             <NextProjectLink>
@@ -115,26 +109,25 @@ export default class Project extends Component {
             </NextProjectLink>
           </Buttom>
         )}
-        <Preview
-          className={isOpen ? "open" : ""}
-          backgroundColor={previewColor}
-        >
+        <Preview className={isOpen ? 'open' : ''} backgroundColor={previewColor}>
           <Image
             src={{
               preload: preview.thumb,
-              content: preview.url
+              content: preview.url,
             }}
           />
         </Preview>
         {!nextProjectLink && (
-          <Logo className={isOpen ? "open" : ""}>
-            <LogoLink to={`/projeto/${slug}`}>
-              <img src={logo.url} alt={logo.name} />
-            </LogoLink>
+          <Logo className={isOpen ? 'open' : ''}>
+            <Buttom to={`/projeto/${slug}`} history={history} type="invisibile">
+              <LogoLink>
+                <img src={logo.url} alt={logo.name} />
+              </LogoLink>
+            </Buttom>
           </Logo>
         )}
         {!nextProjectLink && (
-          <TitleBox className={isOpen ? "open" : ""}>
+          <TitleBox className={isOpen ? 'open' : ''}>
             <Title>{name}</Title>
           </TitleBox>
         )}
@@ -155,13 +148,11 @@ export default class Project extends Component {
           </Fragment>
         )}
         {!nextProjectLink && (
-          <DescriptionBox
-            className={isOpen ? "open DescriptionBox" : "DescriptionBox"}
-          >
+          <DescriptionBox className={isOpen ? 'open DescriptionBox' : 'DescriptionBox'}>
             <Description>{description}</Description>
           </DescriptionBox>
         )}
-        <BigDescriptionBox className={isOpen ? "open" : ""}>
+        <BigDescriptionBox className={isOpen ? 'open' : ''}>
           <p>{longDescription}</p>
         </BigDescriptionBox>
       </Container>
