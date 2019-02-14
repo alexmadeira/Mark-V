@@ -78,58 +78,58 @@ export const Nav = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  li {
-    border-right: 1px solid #4a4a4a;
-    position: relative;
-    overflow: hidden;
+`;
+export const NavItem = styled.li`
+  border-right: 1px solid #4a4a4a;
+  position: relative;
+  overflow: hidden;
 
-    &:last-child {
-      border-right: 0;
+  &:last-child {
+    border-right: 0;
+  }
+  &::before {
+    content: '';
+    background: #f00;
+    transition: width 0.2s ease;
+    position: absolute;
+    height: 5px;
+    width: 0;
+    z-index: 3;
+  }
+
+  &.active {
+    span {
+      color: #fff;
     }
     &::before {
+      width: 100%;
+    }
+  }
+  span {
+    padding: 20px;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &::after {
       content: '';
-      background: #f00;
+      background: rgba(255, 0, 0, 0.3);
       transition: width 0.2s ease;
       position: absolute;
       height: 5px;
       width: 0;
-      z-index: 3;
+      top: 0;
+      left: 0;
+      z-index: 2;
     }
 
-    &.active {
-      a {
-        color: #fff;
-      }
-      &::before {
-        width: 100%;
-      }
-    }
-    a {
-      padding: 20px;
-      color: #999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-transform: capitalize;
-      cursor: pointer;
-
+    &:hover {
+      color: #fff;
       &::after {
-        content: '';
-        background: rgba(255, 0, 0, 0.3);
-        transition: width 0.2s ease;
-        position: absolute;
-        height: 5px;
-        width: 0;
-        top: 0;
-        left: 0;
-        z-index: 2;
-      }
-
-      &:hover {
-        color: #fff;
-        &::after {
-          width: 100%;
-        }
+        width: 100%;
       }
     }
   }

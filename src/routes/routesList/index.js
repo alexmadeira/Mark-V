@@ -1,26 +1,39 @@
-import Projects from "../../pages/projetos";
-import Project from "../../pages/projeto";
-import Home from "../../pages/home";
+import Home from '../../pages/home';
+import Projects from '../../pages/projetos';
+import Project from '../../pages/projeto';
+import Curriculo from '../../pages/curriculo';
 
 const routes = [
   {
-    title: "Home",
-    path: "/",
+    title: 'Home',
+    path: '/',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
-    title: "Projetos",
-    path: "/projetos",
+    title: 'Projetos',
+    path: '/projetos',
     exact: true,
-    component: Projects
+    component: Projects,
   },
   {
-    title: "Projeto",
-    path: "/projeto/:slug",
+    title: 'Projeto',
+    path: '/projeto/:slug',
     exact: true,
-    component: Project
-  }
+    component: Project,
+  },
+  {
+    title: 'Curriculo',
+    path: '/teste',
+    exact: true,
+    component: Curriculo,
+  },
+  {
+    title: 'CurriculoSlected',
+    path: '/teste/:slug',
+    exact: true,
+    component: Curriculo,
+  },
 ];
 
 export default routes;
