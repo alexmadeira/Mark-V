@@ -23,12 +23,6 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowTaggedTemplates": true
-      }
-    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
