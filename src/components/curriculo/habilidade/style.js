@@ -16,11 +16,14 @@ export const ChartBox = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
-  margin: 15px;
+  margin: 15px 15px 100px 15px;
   flex-direction: column;
-  min-width: 500px;
-  max-width: 100%;
+  min-width: 700px;
+  max-width: calc(100% - 30px);
   position: relative;
+  @media (max-width: 699px) {
+    min-width: auto;
+  }
 `;
 
 export const ChartTitle = styled.h2`

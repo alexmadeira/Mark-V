@@ -43,6 +43,11 @@ export const HeaderBox = styled.div`
   margin-left: 10vw;
   z-index: 2;
   position: relative;
+  @media (max-width: 700px) {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+  }
 `;
 
 export const Nome = styled.h1`
@@ -70,6 +75,11 @@ export const NavBox = styled.div`
   margin-top: -20px;
   position: relative;
   z-index: 2;
+  width: 600px;
+  @media (max-width: 700px) {
+    margin-left: 0px;
+    width: 100%;
+  }
 `;
 
 export const Nav = styled.ul`
@@ -78,11 +88,14 @@ export const Nav = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  width: 100%;
 `;
 export const NavItem = styled.li`
   border-right: 1px solid #4a4a4a;
   position: relative;
   overflow: hidden;
+  flex: 1;
 
   &:last-child {
     border-right: 0;

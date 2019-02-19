@@ -12,11 +12,16 @@ class FancyRoute extends React.Component {
 
   componentDidMount() {
     this.setState({ hidden: false });
-    setTimeout(() => {
+
+    this.timer = setTimeout(() => {
       nprogress.done();
 
       document.body.classList.add('loadded');
     }, 1200);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   render() {

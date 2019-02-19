@@ -11,12 +11,11 @@ const Habilidade = () => (
       <PolarChart
         labels={['Photoshop', 'Google Analytics', 'Amazon Web services', 'Firebase']}
         data={[15, 30, 45, 25]}
-        hue="#00f"
       />
     </ChartBox>
     <ChartBox>
       <ChartTitle>Linguagens Client Side</ChartTitle>
-      <PolarChart labels={['JavaScript', 'HTML/HTML5', 'CSS/CSS3']} data={[80, 100, 90]} />
+      <PolarChart labels={['JavaScript', 'HTML/HTML5', 'CSS/CSS3']} data={[80, 98, 90]} />
     </ChartBox>
     <ChartBox>
       <ChartTitle>Linguagens Server Side</ChartTitle>

@@ -48,7 +48,7 @@ PolarChart.propTypes = {
 
 PolarChart.defaultProps = {
   hue: 'random',
-  alpha: 0.4,
+  alpha: 0.6,
 };
 
 export default PolarChart;

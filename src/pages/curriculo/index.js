@@ -18,25 +18,25 @@ export default class Curriculo extends Component {
     nav: [
       {
         slug: '',
-        name: 'Teste',
+        name: 'Sobre',
         component: Geral,
         active: true,
       },
       {
         slug: 'teste-1',
-        name: 'Teste 1',
+        name: 'Expereiências',
         component: Experiencia,
         active: false,
       },
       {
         slug: 'teste-2',
-        name: 'Teste 10',
+        name: 'Educação',
         component: Educacao,
         active: false,
       },
       {
         slug: 'teste-3',
-        name: 'Teste 100',
+        name: 'Habilidades',
         component: Habilidade,
         active: false,
       },
@@ -129,7 +129,7 @@ export default class Curriculo extends Component {
     return (
       <Main>
         <Back to="/" history={history} text="Home" />
-        <Header backgroundImage="-http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
+        <Header backgroundImage="http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
           <HeaderBox>
             <Nome>Teste</Nome>
             <Sobre>
