@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import 'moment-timezone';
+
 import {
   Container,
   Logo,
@@ -39,11 +41,19 @@ const Experiencia = ({
     <Description>{roleDescription}</Description>
     <DateBox>
       <DateText>Entrada:</DateText>
-      <Date format="DD/MM/YYYY">{enter}</Date>
+      <Date format="MM/YYYY" add={{ days: 1 }}>
+        {enter}
+      </Date>
     </DateBox>
     <DateBox>
       <DateText>Saída:</DateText>
-      {exit === null ? <Atual>Atual</Atual> : <Date format="DD/MM/YYYY">{exit}</Date>}
+      {exit === null ? (
+        <Atual>Atual</Atual>
+      ) : (
+        <Date format="MM/YYYY" add={{ days: 1 }}>
+          {exit}
+        </Date>
+      )}
     </DateBox>
   </Container>
 );
