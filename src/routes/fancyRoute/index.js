@@ -17,7 +17,7 @@ class FancyRoute extends React.Component {
       nprogress.done();
 
       document.body.classList.add('loadded');
-    }, 1200);
+    }, 1);
   }
 
   componentWillUnmount() {

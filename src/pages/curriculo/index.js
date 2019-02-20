@@ -7,7 +7,7 @@ import {
 } from './style';
 
 import Geral from '../../components/curriculo/geral';
-import Experiencia from '../../components/curriculo/experiencia';
+import Experiencias from '../../components/curriculo/experiencias';
 import Educacao from '../../components/curriculo/educacao';
 import Habilidade from '../../components/curriculo/habilidade';
 
@@ -25,7 +25,7 @@ export default class Curriculo extends Component {
       {
         slug: 'teste-1',
         name: 'Expereiências',
-        component: Experiencia,
+        component: Experiencias,
         active: false,
       },
       {
@@ -90,7 +90,7 @@ export default class Curriculo extends Component {
     setTimeout(() => {
       this.setShowItem(slug);
       this.activeItem(slug);
-    }, 250);
+    }, 1);
   };
 
   getContent = () => {

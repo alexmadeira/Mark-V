@@ -1,12 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
-import { Creators as ProjectsAtions } from "../../../store/ducks/projects";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import Project from "../../project";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { Container, Row } from "./style";
+import { Creators as ProjectsAtions } from '../../../store/ducks/projects';
+
+import Project from '../../project';
+
+import { Container, Row } from './style';
 
 class Projects extends Component {
   static propTypes = {
@@ -16,11 +18,11 @@ class Projects extends Component {
     simple: PropTypes.bool.isRequired,
     getProjectsRequest: PropTypes.func.isRequired,
     projects: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-    history: PropTypes.shape().isRequired
+    history: PropTypes.shape().isRequired,
   };
 
   static defaultProps = {
-    limit: ""
+    limit: '',
   };
 
   componentDidMount() {
@@ -30,12 +32,13 @@ class Projects extends Component {
   }
 
   render() {
-    const { history, simple, projects, loading } = this.props;
-
+    const {
+      history, simple, projects, loading,
+    } = this.props;
     if (loading) return null;
 
     return (
-      <Container className={!simple && "respiro"}>
+      <Container className={!simple && 'respiro'}>
         <Row>
           {projects.map((project, i) => (
             <Project
@@ -54,13 +57,12 @@ class Projects extends Component {
 
 const mapStateToProps = state => ({
   projects: state.projects.data,
-  loading: state.projects.loading
+  loading: state.projects.loading,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(ProjectsAtions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(ProjectsAtions, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Projects);

@@ -1,18 +1,7 @@
 import styled from 'styled-components';
+import Moment from 'react-moment';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  width: 100%;
-  flex-wrap: wrap;
-  flex: 1;
-  height: 100%;
-  margin-left: -15px;
-  margin-right: -15px;
-`;
-export const ExperienciaBox = styled.div`
   flex: 1;
   min-width: 500px;
   display: flex;
@@ -104,10 +93,46 @@ export const Description = styled.p`
   margin-bottom: 20px;
 `;
 
-export const Date = styled.p`
+export const DateBox = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  min-width: 150px;
+`;
+
+export const DateText = styled.p`
   color: #444;
   font-size: 20px;
-  strong {
-    margin-right: 5px;
+  font-weight: bold;
+  margin-right: 5px;
+`;
+
+export const Date = styled(Moment)`
+  color: #444;
+  font-size: 18px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-left: 5px;
+  padding: 0 5px;
+  position: relative;
+  flex: 1;
+  text-align: center;
+  &::after {
+    content: '';
+    border-bottom: 1px solid #444;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
   }
+`;
+export const Atual = styled.p`
+  color: #444;
+  font-size: 18px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-left: 5px;
+  padding: 0 5px;
+  position: relative;
+  text-align: center;
 `;
