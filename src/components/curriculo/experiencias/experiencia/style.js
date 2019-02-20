@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Moment from 'react-moment';
 
 export const Container = styled.div`
-  flex: 1;
   min-width: 500px;
   display: flex;
   justify-content: center;

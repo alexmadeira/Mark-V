@@ -16,12 +16,11 @@ class Experiencias extends Component {
     loading: PropTypes.bool.isRequired,
     agencies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     getAgenciesRequest: PropTypes.func.isRequired,
-    // history: PropTypes.shape().isRequired,
   };
 
   componentDidMount() {
     const { getAgenciesRequest } = this.props;
-    const filter = 'order=enter:asc';
+    const filter = 'order=enter:desc';
     getAgenciesRequest(filter);
   }
 
