@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import 'moment-timezone';
+import Title from '../../../block/title';
 
 import {
   Container,
   Logo,
   TitleBox,
-  Title,
   Role,
   Info,
   InfoBox,
@@ -33,7 +32,7 @@ const Experiencia = ({
       <Logo src={url} alt={name} />
       <InfoBox>
         <TitleBox>
-          <Title>{name}</Title>
+          <Title type="reverse">{name}</Title>
         </TitleBox>
         <Role>{role}</Role>
       </InfoBox>
@@ -66,8 +65,8 @@ Experiencia.propTypes = {
     logo: PropTypes.shape({
       url: PropTypes.string.isRequired,
     }).isRequired,
-    enter: PropTypes.instanceOf(Date).isRequired,
-    exit: PropTypes.instanceOf(Date).isRequired,
+    enter: PropTypes.string.isRequired,
+    exit: PropTypes.string,
   }).isRequired,
 };
 

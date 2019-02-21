@@ -2,12 +2,18 @@ import styled from 'styled-components';
 import Moment from 'react-moment';
 
 export const Container = styled.div`
-  min-width: 500px;
+  min-width: 515px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin: 50px;
+  margin: 20px 15px 0px 15px;
+  padding: 20px 0 40px 0;
+  @media (max-width: 1105px) {
+    border-bottom: 1px solid #ccc;
+    min-width: calc(100% - 40px);
+    align-items: center;
+  }
 `;
 
 export const Info = styled.div`
@@ -17,8 +23,14 @@ export const Info = styled.div`
   justify-content: flex-start;
   width: 100%;
   flex-direction: row;
+  @media (max-width: 1105px) {
+    align-items: center;
+    justify-content: center;
+  }
+
   @media (max-width: 420px) {
     align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
   }
 `;
@@ -29,6 +41,9 @@ export const InfoBox = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-left: 15px;
+  @media (max-width: 1105px) {
+    flex: initial;
+  }
   @media (max-width: 420px) {
     margin: 0px;
     padding: 0 10px;
@@ -42,54 +57,28 @@ export const Logo = styled.img`
 `;
 
 export const TitleBox = styled.div`
-  background: #ed942f;
-  background: -moz-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, #ed942f),
-    color-stop(100%, #ffd702)
-  );
-  background: -webkit-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -o-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -ms-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: linear-gradient(to right, #ed942f 0%, #ffd702 100%);
-  border: 3px solid #000;
   padding: 0px 20px 0 10px;
   margin-top: 10px;
-`;
-
-export const Title = styled.h2`
-  font-family: 'Bangers', cursive;
-  font-size: 30px;
-  margin: 0;
-  color: #000;
-  line-height: 80%;
-  float: left;
-  padding-top: 10px;
-  &:first-letter {
-    color: #f00;
-    text-shadow: 3px 4px 2px #000000;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000;
-    font-weight: bold;
-    font-size: 60px;
-    letter-spacing: 8px;
-    margin-top: -14px;
-    padding-bottom: 20px;
-    float: left;
-    text-transform: uppercase;
+  min-width: 250px;
+  @media (max-width: 420px) {
+    min-width: 100%;
   }
 `;
 
 export const Role = styled.h3`
   margin-top: 20px;
   font-size: 30px;
+  @media (max-width: 420px) {
+    min-width: 100%;
+  }
 `;
 
 export const Description = styled.p`
   margin-top: 20px;
   margin-bottom: 20px;
+  @media (max-width: 420px) {
+    min-width: 100%;
+  }
 `;
 
 export const DateBox = styled.div`
@@ -99,6 +88,9 @@ export const DateBox = styled.div`
   align-items: center;
   width: 40%;
   min-width: 150px;
+  @media (max-width: 420px) {
+    min-width: 100%;
+  }
 `;
 
 export const DateText = styled.p`

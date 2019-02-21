@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 import Image from '../block/image';
 import Buttom from '../buttons';
+import Title from '../block/title';
 
 import {
   Container,
   Preview,
   TitleBox,
-  Title,
   DescriptionBox,
   Description,
   BigDescriptionBox,

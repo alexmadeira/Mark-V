@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import Title from '../../../components/block/title';
+
 import {
   Container,
   AgencyBox,
@@ -9,7 +11,6 @@ import {
   ProjetDescription,
   ProjetDescriptionBox,
   TitleBox,
-  Title,
   DestaqueBox,
   ProdutoDestaqueBox,
   DestaquesBox,
@@ -69,7 +70,7 @@ const Main = ({
           <AgencyDescriptionBox>
             <AgencyDescription>
               <TitleBox>
-                <Title>Agencia</Title>
+                <Title type="reverse">Agencia</Title>
               </TitleBox>
               <h2>{agency.name}</h2>
               <p>{agency.description}</p>

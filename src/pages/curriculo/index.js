@@ -17,25 +17,25 @@ export default class Curriculo extends Component {
     getOut: false,
     nav: [
       {
-        slug: '',
+        slug: 'sobre',
         name: 'Sobre',
         component: Geral,
         active: true,
       },
       {
-        slug: 'teste-1',
+        slug: 'experiencias',
         name: 'Expereiências',
         component: Experiencias,
         active: false,
       },
       {
-        slug: 'teste-2',
+        slug: 'educacao',
         name: 'Educação',
         component: Educacao,
         active: false,
       },
       {
-        slug: 'teste-3',
+        slug: 'habilidade',
         name: 'Habilidades',
         component: Habilidade,
         active: false,

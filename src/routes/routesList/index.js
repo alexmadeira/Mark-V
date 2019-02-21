@@ -24,12 +24,6 @@ const routes = [
   },
   {
     title: 'Curriculo',
-    path: '/teste',
-    exact: true,
-    component: Curriculo,
-  },
-  {
-    title: 'CurriculoSlected',
     path: '/teste/:slug',
     exact: true,
     component: Curriculo,

@@ -239,48 +239,11 @@ export const AgencyDescription = styled.div`
 `;
 
 export const TitleBox = styled.div`
-  background: #ed942f;
-  background: -moz-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, #ed942f),
-    color-stop(100%, #ffd702)
-  );
-  background: -webkit-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -o-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: -ms-linear-gradient(left, #ed942f 0%, #ffd702 100%);
-  background: linear-gradient(to right, #ed942f 0%, #ffd702 100%);
   z-index: 3;
   position: absolute;
-  right: -20px;
-  top: -20px;
-  border: 3px solid #000;
-  padding: 0px 20px 0 10px;
-`;
-
-export const Title = styled.h2`
-  font-family: 'Bangers', cursive;
-  font-size: 30px;
-  margin: 0;
-  color: #000;
-  line-height: 80%;
-  float: left;
-  padding-top: 10px;
-  border: none !important;
-  &:first-letter {
-    color: #f00;
-    text-shadow: 3px 4px 2px #000000;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000;
-    font-weight: bold;
-    font-size: 60px;
-    letter-spacing: 8px;
-    margin-top: -14px;
-    padding-bottom: 20px;
-    float: left;
-    text-transform: uppercase;
-  }
+  right: -10px;
+  top: -25px;
+  min-width: 200px;
 `;
 
 export const DestaqueBox = styled.div`

@@ -7,7 +7,7 @@ const Agency = ({ total }) => {
   const contentList = [];
   for (let i = 0; i < total; i += 1) {
     contentList.push(
-      <Container className="teste">
+      <Container className="teste" key={String(i)}>
         <ContentLoader height={200}>
           <rect x="0" y="0" rx="0" ry="0" width="90" height="90" />
           <rect x="103" y="5" rx="0" ry="0" width="150" height="40" />

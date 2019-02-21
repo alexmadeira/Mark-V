@@ -162,7 +162,6 @@ export const Contaniner = styled.div`
     flex: 1;
     animation: ${entrada} 1s;
     transition-timing-function: cubic-bezier(0.03, 0.74, 0.64, 1.01);
-    padding: 15px;
   }
   &.out {
     & > div {
