@@ -9,5 +9,4 @@ export const Container = styled.div`
   flex-wrap: wrap;
   flex: 1;
   height: 100%;
-  background: #f00;
 `;

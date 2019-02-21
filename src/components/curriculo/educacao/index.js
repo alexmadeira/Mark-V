@@ -3,7 +3,7 @@ import { Container } from './style';
 
 const Educacao = () => (
   <Container>
-    <h1>Educação</h1>
+    <h1>--</h1>
   </Container>
 );
 export default Educacao;

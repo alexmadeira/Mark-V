@@ -18,6 +18,7 @@ import {
 } from './style';
 
 const Experiencia = ({
+  item,
   agency: {
     name,
     role,
@@ -27,7 +28,7 @@ const Experiencia = ({
     exit,
   },
 }) => (
-  <Container>
+  <Container dalay={item}>
     <Info>
       <Logo src={url} alt={name} />
       <InfoBox>
@@ -58,6 +59,7 @@ const Experiencia = ({
 );
 
 Experiencia.propTypes = {
+  item: PropTypes.number,
   agency: PropTypes.shape({
     name: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
@@ -68,6 +70,9 @@ Experiencia.propTypes = {
     enter: PropTypes.string.isRequired,
     exit: PropTypes.string,
   }).isRequired,
+};
+Experiencia.defaultProps = {
+  item: 0,
 };
 
 export default Experiencia;

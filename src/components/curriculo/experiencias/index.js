@@ -31,7 +31,7 @@ class Experiencias extends Component {
         {loading ? (
           <LoadingAgency total={6} />
         ) : (
-          agencies.map(agency => <Experiencia agency={agency} key={agency.id} />)
+          agencies.map((agency, i) => <Experiencia agency={agency} item={i} key={agency.id} />)
         )}
       </Container>
     );
