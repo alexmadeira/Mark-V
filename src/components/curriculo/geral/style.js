@@ -32,16 +32,21 @@ export const ContentBox = styled.div`
 
 export const TextContent = styled.div`
   padding: 35px 10px 10px 10px;
+  flex: 1;
 `;
 
 export const TitleBox = styled.div`
-  max-width: 400px;
+  max-width: 420px;
   margin-top: -58px;
   margin-left: -13px;
   position: relative;
   z-index: 2;
+
   @media (max-width: 1300px) {
     margin-top: -75px;
+  }
+  @media (max-width: 500px) {
+    width: calc(100% + 26px);
   }
 `;
 export const Text = styled.p`
@@ -49,17 +54,24 @@ export const Text = styled.p`
   margin: 15px;
 `;
 
-export const Image = styled.img`
-  margin: 0;
+export const ImageBox = styled.figure`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   flex: 1;
-  height: 100%;
-  clip-path: polygon(0 100%, 100% -200%, 100% 100%, 0% 100%);
-  position: absolute;
-  right: 0%;
+  padding-top: 35px;
   @media (max-width: 1300px) {
     height: auto;
     width: 100%;
-    clip-path: initial;
     position: relative;
+  }
+`;
+
+export const Image = styled.img`
+  margin: 0;
+  width: 100%;
+  right: 0%;
+  @media (max-width: 1300px) {
+    mask-image: linear-gradient(black 50%, transparent 100%);
   }
 `;

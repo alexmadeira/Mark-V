@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Back from '../../components/block/back';
 import {
-  Main, Header, Nome, HeaderBox, Sobre, NavBox, Nav, NavItem, Contaniner,
+  faUser, faMedal, faGraduationCap, faUserNinja,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  Main,
+  Header,
+  Nome,
+  HeaderBox,
+  Sobre,
+  NavBox,
+  Nav,
+  NavItem,
+  Contaniner,
+  Icon,
 } from './style';
 
+import Back from '../../components/block/back';
 import Geral from '../../components/curriculo/geral';
 import Experiencias from '../../components/curriculo/experiencias';
 import Educacao from '../../components/curriculo/educacao';
@@ -19,24 +31,28 @@ export default class Curriculo extends Component {
       {
         slug: 'sobre',
         name: 'Sobre',
+        icon: <Icon icon={faUser} />,
         component: Geral,
         active: true,
       },
       {
         slug: 'experiencias',
         name: 'Expereiências',
+        icon: <Icon icon={faMedal} />,
         component: Experiencias,
         active: false,
       },
       {
         slug: 'educacao',
         name: 'Educação',
+        icon: <Icon icon={faGraduationCap} />,
         component: Educacao,
         active: false,
       },
       {
         slug: 'habilidade',
         name: 'Habilidades',
+        icon: <Icon icon={faUserNinja} />,
         component: Habilidade,
         active: false,
       },
@@ -141,13 +157,18 @@ export default class Curriculo extends Component {
         </Header>
         <NavBox>
           <Nav>
-            {nav.map(({ slug, active, name }) => (
+            {nav.map(({
+              slug, active, icon, name,
+            }) => (
               <NavItem
                 className={active ? 'active' : ''}
                 onClick={() => this.removeContent(slug)}
                 key={slug}
               >
-                <span>{name}</span>
+                <span>
+                  {icon}
+                  <em>{name}</em>
+                </span>
               </NavItem>
             ))}
           </Nav>

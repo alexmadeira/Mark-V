@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from '../../block/title';
 import {
-  Container, ContentBox, TitleBox, Text, Image, TextContent,
+  Container, ContentBox, TitleBox, Text, ImageBox, Image, TextContent,
 } from './style';
 
 const Geral = () => (
@@ -54,7 +54,12 @@ const Geral = () => (
         </Text>
         <Text>Lorem, ipsum dolor.</Text>
       </TextContent>
-      <Image src="https://dummyimage.com/800x600/000/fff" alt="" />
+      <ImageBox>
+        <Image
+          src="https://uploaddeimagens.com.br/images/001/917/735/full/kisspng-female-clip-art-avatar-5ab751af40c072.7412098915219634392652.png?1550841983"
+          alt=""
+        />
+      </ImageBox>
     </ContentBox>
   </Container>
 );

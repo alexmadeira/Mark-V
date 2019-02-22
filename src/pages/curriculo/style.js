@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const entrada = keyframes`
   0% {  opacity: 0; }
@@ -81,14 +82,24 @@ export const Nav = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: calc(100% - 40px);
+  width: calc(100% - 100px);
   margin-left: 82px;
+  @media (max-width: 800px) {
+    width: 100%;
+    margin-left: 0px;
+  }
 `;
+
 export const NavItem = styled.li`
   position: relative;
   overflow: hidden;
   flex: 1;
   margin-left: -65px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &::after {
     content: '';
     position: absolute;
@@ -112,6 +123,21 @@ export const NavItem = styled.li`
     border: 1px solid #4a4a4a;
   }
 
+  @media (max-width: 800px) {
+    margin-left: 0px;
+    border-right: 1px solid #4a4a4a;
+    &::after,
+    &::before {
+      display: none;
+    }
+    span {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   &:last-child {
     border-right: 0;
   }
@@ -131,16 +157,26 @@ export const NavItem = styled.li`
         border-color: #20252a transparent transparent transparent;
       }
     }
+    svg {
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
   span {
-    padding: 20px 25px;
     color: #999;
     display: flex;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
+    em {
+      font-style: normal;
+      @media (max-width: 800px) {
+        display: none;
+      }
+    }
 
     &::after {
       content: '';
@@ -169,6 +205,15 @@ export const NavItem = styled.li`
     &:hover {
       color: #fff;
     }
+  }
+`;
+
+export const Icon = styled(FontAwesomeIcon)`
+  color: #999;
+  font-size: 30px;
+  display: none;
+  @media (max-width: 800px) {
+    display: flex;
   }
 `;
 
