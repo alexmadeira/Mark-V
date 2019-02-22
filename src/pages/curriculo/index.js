@@ -146,7 +146,7 @@ export default class Curriculo extends Component {
       <Main>
         <Back to="/" history={history} text="Home" />
 
-        <Header backgroundImage=" http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
+        <Header backgroundImage="-http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
           <HeaderBox>
             <Nome>Teste</Nome>
             <Sobre>
