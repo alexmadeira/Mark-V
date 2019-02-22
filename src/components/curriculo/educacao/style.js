@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const entrada = keyframes`
+  0% { margin-top: 200px; opacity: 0; }
+  50% { margin-top: 200px; opacity: 0; }
+  100% { opacity: 1; }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -22,6 +28,8 @@ export const EducationBox = styled.div`
   display: flex;
   margin: 0 30px;
   padding: 30px 0;
+  animation: ${entrada} ${props => (props.dalay ? props.dalay * 0.8 : 0)}s;
+  animation-timing-function: ease-out;
   @media (max-width: 1189px) {
     border-bottom: 1px solid #ccc;
     min-width: 100%;
