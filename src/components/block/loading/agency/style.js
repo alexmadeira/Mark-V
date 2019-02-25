@@ -5,7 +5,6 @@ export const Container = styled.div`
   left: 50px;
   top: 15px;
   width: calc(100% - 100px);
-  z-index: 2;
   display: flex;
   flex-wrap: wrap;
 `;

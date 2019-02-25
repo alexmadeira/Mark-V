@@ -10,6 +10,7 @@ export const Container = styled.div`
   margin: 20px 15px 0px 15px;
   padding: 20px 0 40px 0;
   transition: opacity 1s;
+  z-index: 1;
   &.hidden {
     opacity: 0;
   }

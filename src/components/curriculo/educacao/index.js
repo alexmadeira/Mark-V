@@ -7,7 +7,14 @@ import { bindActionCreators } from 'redux';
 import { Creators as EducationsActions } from '../../../store/ducks/eductions';
 
 import {
-  Container, EducationBox, ImageBox, TitleBox, Imagem, TextBox, Text,
+  Container,
+  EducationBox,
+  ImageBox,
+  Imagem,
+  TitleBox,
+  SubTitle,
+  TextBox,
+  Text,
 } from './style';
 
 import Title from '../../block/title';
@@ -32,19 +39,19 @@ class Educacao extends Component {
     return (
       <Container>
         <LoadingEducation total={4} show={loading} />
-        {educations.map(() => (
+        {educations.map(({
+          logo: { url }, name, sobrenome, description,
+        }) => (
           <EducationBox className={loading ? 'hidden' : 'show'}>
             <ImageBox>
-              <Imagem src="https://dummyimage.com/200x200/fff/000" alt="" />
+              <Imagem src={url} alt={name} />
             </ImageBox>
             <TextBox>
               <TitleBox>
-                <Title type="reverse">Teste Teste </Title>
+                <Title type="reverse">{name}</Title>
               </TitleBox>
-              <Text>
-                Bacon ipsum dolor amet boudin swine bresaola meatloaf turkey andouille doner kevin
-                jowl alcatra fatback drumstick.
-              </Text>
+              <SubTitle>{sobrenome}</SubTitle>
+              <Text>{description}</Text>
             </TextBox>
           </EducationBox>
         ))}

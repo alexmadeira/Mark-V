@@ -18,6 +18,7 @@ export const Container = styled.div`
 
 export const EducationBox = styled.div`
   min-width: 500px;
+  z-index: 1;
   flex: 1;
   display: flex;
   margin: 0 30px;
@@ -58,6 +59,8 @@ export const ImageBox = styled.figure`
 
 export const Imagem = styled.img`
   border: 1px solid #000;
+  width: 200px;
+  height: 200px;
 `;
 
 export const TextBox = styled.div`
@@ -75,5 +78,7 @@ export const TitleBox = styled.div`
     max-width: 100%;
   }
 `;
+
+export const SubTitle = styled.h2``;
 
 export const Text = styled.p``;
