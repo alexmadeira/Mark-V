@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ContentLoader from 'react-content-loader';
 
-import { Container } from './style';
+import { Container, AgencyLoading } from './style';
 
-const Agency = ({ total }) => {
+const Agency = ({ total, show }) => {
   const contentList = [];
   for (let i = 0; i < total; i += 1) {
     contentList.push(
-      <Container className="teste" key={String(i)}>
+      <AgencyLoading className={show ? 'show' : 'hidden'} key={String(i)}>
         <ContentLoader height={200}>
           <rect x="0" y="0" rx="0" ry="0" width="90" height="90" />
           <rect x="103" y="5" rx="0" ry="0" width="150" height="40" />
@@ -18,10 +19,20 @@ const Agency = ({ total }) => {
           <rect x="0" y="165" rx="0" ry="0" width="200" height="10" />
           <rect x="0" y="185" rx="0" ry="0" width="200" height="10" />
         </ContentLoader>
-      </Container>,
+      </AgencyLoading>,
     );
   }
-  return contentList;
+  return <Container>{contentList}</Container>;
+};
+
+Agency.propTypes = {
+  total: PropTypes.number,
+  show: PropTypes.bool,
+};
+
+Agency.defaultProps = {
+  total: 1,
+  show: true,
 };
 
 export default Agency;

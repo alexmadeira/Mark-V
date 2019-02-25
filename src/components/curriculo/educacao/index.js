@@ -11,6 +11,7 @@ import {
 } from './style';
 
 import Title from '../../block/title';
+import LoadingEducation from '../../block/loading/education';
 
 class Educacao extends Component {
   static propTypes = {
@@ -21,18 +22,18 @@ class Educacao extends Component {
 
   componentDidMount() {
     const { getEducationsRequest } = this.props;
-    const filter = 'order=enter:desc';
-    getEducationsRequest(filter);
+
+    getEducationsRequest();
   }
 
   render() {
     const { loading, educations } = this.props;
-    console.tron.log(this.props);
-    if (loading) return null;
+
     return (
       <Container>
+        <LoadingEducation total={4} show={loading} />
         {educations.map(() => (
-          <EducationBox dalay={0}>
+          <EducationBox className={loading ? 'hidden' : 'show'}>
             <ImageBox>
               <Imagem src="https://dummyimage.com/200x200/fff/000" alt="" />
             </ImageBox>

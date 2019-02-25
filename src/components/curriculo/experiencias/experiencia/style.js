@@ -1,11 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Moment from 'react-moment';
-
-const entrada = keyframes`
-  0% { margin-left: 200px; opacity: 0; }
-  60% { margin-left: 200px; opacity: 0; }
-  100% { opacity: 1; }
-`;
 
 export const Container = styled.div`
   min-width: 515px;
@@ -15,8 +9,10 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 20px 15px 0px 15px;
   padding: 20px 0 40px 0;
-  animation: ${entrada} ${props => (props.dalay ? props.dalay * 0.7 : 0)}s;
-  animation-timing-function: ease-out;
+  transition: opacity 1s;
+  &.hidden {
+    opacity: 0;
+  }
   @media (max-width: 1105px) {
     border-bottom: 1px solid #ccc;
     min-width: calc(100% - 40px);

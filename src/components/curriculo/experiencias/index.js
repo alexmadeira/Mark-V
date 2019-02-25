@@ -28,11 +28,10 @@ class Experiencias extends Component {
     const { agencies, loading } = this.props;
     return (
       <Container>
-        {loading ? (
-          <LoadingAgency total={6} />
-        ) : (
-          agencies.map((agency, i) => <Experiencia agency={agency} item={i} key={agency.id} />)
-        )}
+        <LoadingAgency total={6} show={loading} />
+        {agencies.map(agency => (
+          <Experiencia agency={agency} className={loading ? 'hidden' : 'show'} key={agency.id} />
+        ))}
       </Container>
     );
   }
