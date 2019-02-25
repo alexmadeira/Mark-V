@@ -145,10 +145,9 @@ export default class Curriculo extends Component {
     return (
       <Main>
         <Back to="/" history={history} text="Home" />
-
-        <Header backgroundImage="-http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg?">
+        <Header backgroundImage="-http://hdqwalls.com/wallpapers/iron-fist-artwork-19.jpg">
           <HeaderBox>
-            <Nome>Teste</Nome>
+            <Nome>Alex Cardoso Madeira</Nome>
             <Sobre>
               Trained in ways of martial arts at kun-Lun, Danny Rand becomes the Immortal Iron Fist
               and uses his incredible abilities to defend others.
