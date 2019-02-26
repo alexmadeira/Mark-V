@@ -17,6 +17,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  background: ${props => (props.bgColor ? `${props.bgColor}` : '#ffffff')};
   @media (max-width: 914px) {
     flex-direction: column;
   }
@@ -32,9 +33,7 @@ export const Header = styled.header`
     left: 0;
     top: 0;
     z-index: 0;
-    max-width: 100%;
     &.lt-image {
-      width: 100%;
       img {
         width: 100%;
         height: initial;
@@ -116,13 +115,15 @@ export const ProjetDescription = styled.div`
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: block;
   position: relative;
   padding: 15px;
   margin-bottom: -1px;
-  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%);
+
+  background: linear-gradient(
+    ${props => (props.bgColor ? props.bgColor : '#0ff')} 0%,
+    rgba(0, 0, 0, 1) 50%
+  );
 `;
 
 export const Row = styled.div`
@@ -191,9 +192,11 @@ export const AgencyBox = styled.div`
     height: auto;
   }
 `;
+
 export const AgencyDescriptionBox = styled.div`
   z-index: 4;
 `;
+
 export const AgencyDescription = styled.div`
   background: #fff;
   border: 3px solid #000;
@@ -366,6 +369,7 @@ export const NextProjectBox = styled.div`
   width: 100%;
   left: -15px;
   max-height: 400px;
+  margin: 15px 0;
   flex: 1;
   & > * {
     min-width: 100%;

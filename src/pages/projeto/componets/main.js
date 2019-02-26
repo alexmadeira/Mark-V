@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import Title from '../../../components/block/title';
-
 import {
   Container,
   AgencyBox,
@@ -20,11 +18,13 @@ import {
   Row,
 } from './style';
 
+import Title from '../../../components/block/title';
 import Image from '../../../components/block/image';
 import NextProject from '../../../components/project';
 
 const Main = ({
   project: {
+    backgroundColor,
     background,
     url,
     logo,
@@ -40,7 +40,7 @@ const Main = ({
   history,
 }) => (
   <Fragment>
-    <Header>
+    <Header bgColor={backgroundColor}>
       <Image
         className="background"
         src={{
@@ -48,6 +48,7 @@ const Main = ({
           content: background.url,
         }}
       />
+
       <a href={url} target="_blank" rel="noopener noreferrer">
         <Image
           className="logo"
@@ -64,7 +65,7 @@ const Main = ({
         </ProjetDescription>
       </ProjetDescriptionBox>
     </Header>
-    <Container>
+    <Container bgColor={backgroundColor}>
       <Row className="noHorizontalMargin">
         <AgencyBox>
           <AgencyDescriptionBox>
