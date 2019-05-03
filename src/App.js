@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import PerfectScrollbar from '@opuscapita/react-perfect-scrollbar';
 
 import './config/reactotron';
 import './styles/global';
@@ -13,8 +14,10 @@ const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Fragment>
-        <Routes />
-        <Footer />
+        <PerfectScrollbar>
+          <Routes />
+          <Footer />
+        </PerfectScrollbar>
       </Fragment>
     </BrowserRouter>
   </Provider>

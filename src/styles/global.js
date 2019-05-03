@@ -15,10 +15,9 @@ injectGlobal`
 
 html,body,#root{
   height:100vh;
-  overflow-x: hidden;
 }
 #root{
-    transition:opacity 1s;
+    transition:opacity .5s;
 }
 
 .loadded{
